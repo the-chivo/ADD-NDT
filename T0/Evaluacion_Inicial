@@ -1,0 +1,52 @@
+ADD-NDT
+Repositorio de la asignatura Acceso a Datos en New Digital Talent en el ciclo de DAM
+
+Evaluación inicial (no calificable)
+Programación (Java)
+Explica brevemente con tus palabras qué diferencia hay entre una clase y un objeto.
+
+Una objeto es una cosa capaz de guardar variables dentro de el y una clase esta por encima en la gerarquia y puede almacenar objetos y codigo para luego recurrir a ella.
+
+¿Sabrías definir el concepto de excepción en el ámbito de la programación? Busque la sintaxis de una excepción en Java.
+
+Una excepcion se da cuando el codigo acaba en un punto inesperado para el cual no esta preparado y ocurriría un crasheo en la aplicación, la forma de subsanar esto es preparar el codigo para esas escepciones y conseguir que el codigo no quede en un punto muerto
+
+¿Sabrías definir el concepto de herencia en el ámbito de la programación?¿Qué utilidad tiene la herencia? Busque la sintaxis para indicar que una clase hereda de otra en Java.
+
+La herencia es cuando una clase "hija" hereda de una clase "padre", heredar significa que desde la o las clases hijas se puede acceder a funciones u objetos ya definidos en la clase padre y usarlos en la clase hija, permitiendo que varias clases hijas 
+puedan usar la mismas funciones pero con los datos especificos de cada clase hija
+
+Escribe una clase Persona con los atributos nombre y edad, un constructor y un método que devuelva si la persona es mayor de edad.
+
+public class Persona(){
+  string nombre;
+  int edad;
+
+  public Persona(){
+  nombre = "";
+  edad = 0;
+  }
+
+  public static void main(String[] args){
+  Persona antonio = new Persona();
+  if(antonio => 18){
+    System.out.printnl("Es mayor de edad"
+    }
+  else{System.out.printnl("Es menor de edad")}
+  }
+}
+
+Base de Datos (SQL)
+¿Por qué es interesante utilizar una base de datos frente a un documento de texto plano o un documento de Excel?
+
+Por que es modificable mediante codigo y permie automatizar el ingreso de datos, editarlos entre otras muchas cosas
+
+¿Sabrías definir los conceptos de clave primaria (primary key) y clave foránea (foreign key)?
+
+La primaria es una clave que siempre es la misma y la foranea depende de la situacion
+
+Escribe la sentencia SQL para crear una tabla Alumnos con los campos:
+id (entero, clave primaria)
+nombre (texto, obligatorio)
+edad (entero, opcional)
+Escribe la sentencia SQL para filtrar los alumnos mayores de edad de nuestra base de datos.
