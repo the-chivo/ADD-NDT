@@ -55,3 +55,41 @@ public class MyClass {
   }
 ```
 
+Ejercicio 4. (1 punto)
+Hasta este momento hemos creado los directorios sin realizar ningún tipo de comprobación,
+añada al código de los ejercicios 1 y 2 comprobaciones para no crear el directorio si ya existe.
+
+```
+import java.io.File;
+
+public class MyClass {
+  public static void main(String args[]) {
+    
+    File dir = new File("/P1/cine_granada");
+    if(!dir.exists()){
+        dir.mkdirs();
+    }
+  }
+}
+```
+
+Ejercicio 4.2. Comprobaciones añadidas al ejercicio 2. (0.5 puntos de 1)
+
+´´´
+import java.io.File;
+
+public class MyClass {
+    public static void main(String args[]) {
+      
+        String[] dias = {"lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"};
+    
+        for (String dia : dias){
+        
+            File dir = new File("P1/" + dia);
+            if(!dir.exists()){
+              dir.mkdir();
+            }
+        }
+  }
+}
+```
