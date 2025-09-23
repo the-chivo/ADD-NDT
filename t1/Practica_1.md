@@ -33,4 +33,25 @@ public class MyClass {
     }
   }
 ```
+Ejercicio 3. (1 punto)
+Haciendo uso de la clase Java.io.File deberá mover los siguientes directorios: "Lunes, Martes,
+Miércoles, Jueves, Viernes, Sábado, Domingo" dentro de la carpeta "cine_granada".
+
+```
+import java.io.File;
+
+public class MyClass {
+    public static void main(String args[]) {
+      
+        String[] dias = {"lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"};
+    
+        for (String dia : dias){
+        
+            File origen = new File("P1/" + dia);
+            File destino = new File("p1/cine_granada" + dia);
+            origen.renameTo(destino);
+        }
+    }
+  }
+```
 
