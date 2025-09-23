@@ -75,7 +75,7 @@ public class MyClass {
 
 Ejercicio 4.2. Comprobaciones añadidas al ejercicio 2. (0.5 puntos de 1)
 
-´´´
+```
 import java.io.File;
 
 public class MyClass {
