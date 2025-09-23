@@ -59,6 +59,8 @@ Ejercicio 4. (1 punto)
 Hasta este momento hemos creado los directorios sin realizar ningún tipo de comprobación,
 añada al código de los ejercicios 1 y 2 comprobaciones para no crear el directorio si ya existe.
 
+Ejercicio 4.1. Comprobaciones añadidas al ejercicio 1. (0.5 puntos de 1)
+
 ```
 import java.io.File;
 
@@ -93,3 +95,50 @@ public class MyClass {
   }
 }
 ```
+Ejercicio 5. (0.5 puntos)
+A partir de la modificación realizada en el ejercicio 4 incluya el código necesario para imprimir por
+consola la ruta absoluta de los ficheros o directorios en el momento de crearse. Deberá imprimir
+un mensaje como el siguiente "Se ha creado el directorio con ruta absoluta: /…/…/…".
+
+-Primer ejercicio
+```
+import java.io.File;
+
+public class MyClass {
+  public static void main(String args[]) {
+    
+    File dir = new File("/P1/cine_granada");
+    if(!dir.exists()){
+        dir.mkdirs();
+        System.out.println("se ha creado el directorio con la ruta absoluta: " + dir.getAbsolutePath());
+    }
+  }
+}
+```
+-Segundo:
+```
+import java.io.File;
+
+public class MyClass {
+    public static void main(String args[]) {
+      
+        String[] dias = {"lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"};
+    
+        for (String dia : dias){
+        
+            File dir = new File("P1/" + dia);
+            if(!dir.exists()){
+              dir.mkdir();
+              System.out.println("se ha creado el directorio con la ruta absoluta: " + dir.getAbsolutePath());
+            }
+        }
+  }
+}
+```
+
+Ejercicio 6. (0.5 puntos)
+Haciendo uso de uno de los métodos de la clase Java.io.File, liste y muestre por pantalla todos los
+archivos del directorio "cine_granada". Deberá mostrar la ruta relativa con el siguiente mensaje:
+"Archivos creados hasta ahora:" "ruta relativa: /…/…/…", "ruta relativa: /…/…/…", …
+
+
