@@ -12,3 +12,9 @@ public class MyClass {
   }
 }
 ```
+Ejercicio 2. (0.5 puntos)
+Haciendo uso de la clase Java.io.File deberá crear los siguientes directorios dentro de la carpeta
+"P1" (no confundir con incluir dentro de la carpeta creada en el ejercicio 1): "Lunes, Martes,
+Miércoles, Jueves, Viernes, Sábado, Domingo".
+
+
