@@ -17,4 +17,20 @@ Haciendo uso de la clase Java.io.File deberá crear los siguientes directorios d
 "P1" (no confundir con incluir dentro de la carpeta creada en el ejercicio 1): "Lunes, Martes,
 Miércoles, Jueves, Viernes, Sábado, Domingo".
 
+```
+import java.io.File;
+
+public class MyClass {
+    public static void main(String args[]) {
+      
+        String[] dias = {"lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"};
+    
+        for (String dia : dias){
+        
+            File dir = new File("P1/" + dia);
+            dir.mkdir();
+        }
+    }
+  }
+```
 
