@@ -142,3 +142,78 @@ archivos del directorio "cine_granada". Deberá mostrar la ruta relativa con el 
 "Archivos creados hasta ahora:" "ruta relativa: /…/…/…", "ruta relativa: /…/…/…", …
 
 
+import java.io.File;
+
+public class MyClass {
+    public static void main(String args[]) {
+      
+        String[] dias = {"lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"};
+    
+        for (String dia : dias){
+        
+            File dir = new File("P1/" + dia);
+            if(!dir.exists()){
+              dir.mkdir();
+              System.out.println("se ha creado el directorio con la ruta absoluta: " + dir.getAbsolutePath());
+            }
+        }
+  }
+}
+
+
+Ejercicio 7. (1 punto)
+Haciendo uso de la clase Java.io.File deberá crear un archivo llamado "sesiones.txt" dentro de
+cada una de las carpetas con nombre: "Lunes, Martes, Miércoles, Jueves, Viernes, Sábado,
+Domingo". De esta forma deberán crearse 5 archivos llamados "sesiones.txt".
+
+```
+import java.io.File;
+
+public class MyClass {
+    public static void main(String args[]) {
+      
+        String[] dias = {"lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"};
+    
+        for (String dia : dias){
+            File dir = new File("P1/" + dia + "sesiones.txt");
+            if(!dir.exists()){
+              dir.mkdir();
+              System.out.println("se ha creado el directorio con la ruta absoluta: " + dir.getAbsolutePath());
+            }
+        }
+  }
+}
+
+```
+
+Ejercicio 8. (1.5 puntos)
+Haciendo uso del método de lectura y escritura secuencial mediante bytes realice lo siguiente:
+• Escriba en el fichero "sesiones.txt" del directorio "Lunes": Spiderman (2002): 18:00 - 20:07.
+• Lea el fichero completo e imprima por pantalla el contenido.
+
+```
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+
+public class Addp_1 {
+    public static void main(String args[]) throws FileNotFoundException, IOException {
+        
+        File archivo = new File("p1/cine_granada/Lunes/sesion.txt");
+        FileOutputStream fos = new FileOutputStream(archivo);
+        
+        String texto = "Lunes\": Spiderman (2002): 18:00 - 20:07";
+        fos.write(texto.getBytes());
+        
+        FileInputStream fis = new FileInputStream(archivo);
+        int i;
+        while((i = fis.read()) != -1){
+            System.out.print((char)i);
+        }                                          
+  }
+}
+```
+
