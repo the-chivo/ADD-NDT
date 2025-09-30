@@ -205,7 +205,7 @@ public class Addp_1 {
         File archivo = new File("p1/cine_granada/Lunes/sesion.txt");
         FileOutputStream fos = new FileOutputStream(archivo);
         
-        String texto = "Lunes\": Spiderman (2002): 18:00 - 20:07";
+        String texto =  "Spiderman (2002): 18:00 - 20:07";
         fos.write(texto.getBytes());
         
         FileInputStream fis = new FileInputStream(archivo);
@@ -217,3 +217,27 @@ public class Addp_1 {
 }
 ```
 
+Ejercicio 9. (1.5 puntos)
+Haciendo uso del método de lectura y escritura secuencial mediante caracteres realice lo
+siguiente:
+• Escriba en el fichero "sesiones.txt" del directorio "Martes": Iron Man (2008): 17:00 - 19:06.
+• Lea el fichero completo e imprima por pantalla el contenido.
+
+```
+public class Addp_1 {
+    public static void main(String args[]) throws FileNotFoundException, IOException {
+        
+        File archivo = new File("p1/cine_granada/Martes/sesion.txt");
+        FileOutputStream fos = new FileOutputStream(archivo);
+        
+        String texto = "Iron Man (2008): 17:00 - 19:06.";
+        fos.write(texto.getBytes());
+        
+        FileInputStream fis = new FileInputStream(archivo);
+        int i;
+        while((i = fis.read()) != -1){
+            System.out.print((char)i);
+        }                                          
+  }
+}
+```
