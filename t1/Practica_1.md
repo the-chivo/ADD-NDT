@@ -241,3 +241,40 @@ public class Addp_1 {
   }
 }
 ```
+
+Ejercicio 10. (2 puntos)
+Haciendo uso del método de lectura y escritura aleatoria mediante bytes realice lo siguiente:
+• Escriba en el fichero "sesiones.txt" del directorio "Miércoles": Titanic (1998): 17:00 - 20:15.
+• Tras esta escritura, el cine ha detectado un error en el año de publicación de la película y
+desea arreglarlo, sin sobreescribir todo el texto, modifique el año de 1998 a 1997.
+• Lea el fichero completo e imprima por pantalla el contenido.
+
+```
+public class Mavenproject1 {
+
+    public static void main(String args[]) throws FileNotFoundException, IOException{
+    
+        File archivo = new File("p1/cine_granada/miercoles");
+        archivo.mkdirs();
+        File fichero = new File("p1/cine_granada/miercoles/sesion.txt");
+        fichero.createNewFile();
+        
+        FileOutputStream fos = new FileOutputStream(fichero);
+        
+        String texto = " Titanic (1998): 17:00 - 20:15.";
+        String textoCorregido = "1997";
+        fos.write(texto.getBytes());
+        
+        RandomAccessFile raf = new RandomAccessFile(fichero, "rws");
+        raf.seek(10);
+        raf.writeBytes(textoCorregido);
+        
+        FileInputStream fis = new FileInputStream(fichero);
+        int i;
+        while((i = fis.read()) != -1){
+            System.out.print((char)i);
+        } 
+        
+    }
+}
+```
