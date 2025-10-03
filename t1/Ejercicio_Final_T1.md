@@ -28,16 +28,59 @@ todo el contenido.
    
 ```
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
+/**
+ *
+ * @author Alumnos
+ */
 public class Ejercicio_Final_t1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         File directorio = new File("Biblioteca");
+        String[] categorias = {"Novela","Ciencia","Poesia","Historia","Arte"};
+        String textoNovela = "Don Quijote(1605)- Miguel de Cervantes";
+        String textoPoesia = "20 Poemas de amor(1924)-Pablo neruda";
+        String textoCiencia = "El origen de las especies(1859)- Charles Darwing";
         
         if(!directorio.exists()){
             directorio.mkdirs();
         }
+        for(String categoria : categorias){
+            
+            File dir = new File(directorio + "/" + categoria);
+            File fichero = new File(directorio + "/" + categoria + "/Catalogo.txt");
+            if(!dir.exists()){
+                dir.mkdirs();
+                fichero.createNewFile();
+            }
+            FileReader fr = new FileReader(dir);
+        }   
         
-    }
+         File novelaCat = new File("Biblioteca/Novela/Catalogo.txt");
+         FileOutputStream fos = new FileOutputStream(novelaCat);
+         fos.write(textoNovela.getBytes());
+         fos.close();
+         
+         File poesiaCat = new File("Biblioteca/Poesia/Catalogo.txt");
+         FileWriter fw = new FileWriter(poesiaCat);
+         fw.write(textoPoesia);
+         fw.close();
+         
+         File cienciaCat = new File("Biblioteca/Ciencia/Catalogo.txt");
+         RandomAccessFile raf = new RandomAccessFile(cienciaCat, "rws");
+         raf.writeBytes(textoCiencia);
+         
+         raf.seek("El origen de las especies(".length());
+         raf.writeBytes("1858");
+         raf.seek(0);
+         
+        }
+        
+        
 }
 ```
