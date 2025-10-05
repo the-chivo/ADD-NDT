@@ -24,33 +24,37 @@ Cervantes".
 ○ En Ciencia/catalogo.txt guardar y leer con acceso aleatorio: "El origen de las
 especies (1859) - Charles Darwin". Luego corregir el año a 1858 sin sobrescribir
 todo el contenido.
-5. Listar todo el contenido de B
+5. Listar todo el contenido de Biblioteca (carpetas y archivos), mostrando sus rutas relativas 
+desde Biblioteca.
    
 ```
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.test;
+
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
 /**
  *
- * @author Alumnos
+ * @author adria
  */
-public class Ejercicio_Final_t1 {
+public class Test {
 
     public static void main(String[] args) throws IOException {
         File directorio = new File("Biblioteca");
-        String[] categorias = {"Novela","Ciencia","Poesia","Historia","Arte"};
+        String[] categorias = {"Novela","Ciencia","Poesia","Historia","Arte"};  //Defino los textos a insertar
         String textoNovela = "Don Quijote(1605)- Miguel de Cervantes";
         String textoPoesia = "20 Poemas de amor(1924)-Pablo neruda";
         String textoCiencia = "El origen de las especies(1859)- Charles Darwing";
         
-        if(!directorio.exists()){
-            directorio.mkdirs();
-        }
-        for(String categoria : categorias){
+       
+        for(String categoria : categorias){         //Bucle que crea los directorios y archivos
             
             File dir = new File(directorio + "/" + categoria);
             File fichero = new File(directorio + "/" + categoria + "/Catalogo.txt");
@@ -58,29 +62,36 @@ public class Ejercicio_Final_t1 {
                 dir.mkdirs();
                 fichero.createNewFile();
             }
-            FileReader fr = new FileReader(dir);
+            
+            System.out.println(fichero.getPath());         //Muestra en consola la ruta relativa de todos los ficheros
+            
+            RandomAccessFile raf = new RandomAccessFile(fichero, "rws");
+            String linea;
+            while((linea = raf.readLine()) != null){       //Muestra en consola el contenido de los archivos que tengan algo
+                
+                System.out.println(linea);
+            }
+            
         }   
         
-         File novelaCat = new File("Biblioteca/Novela/Catalogo.txt");
-         FileOutputStream fos = new FileOutputStream(novelaCat);
+         File novelaCat = new File("Biblioteca/Novela/Catalogo.txt"); //Añade el texto de novela en su catalogo
+         FileOutputStream fos = new FileOutputStream(novelaCat);      
          fos.write(textoNovela.getBytes());
          fos.close();
          
-         File poesiaCat = new File("Biblioteca/Poesia/Catalogo.txt");
+         File poesiaCat = new File("Biblioteca/Poesia/Catalogo.txt"); //Añade el texto de poesia en su catalogo
          FileWriter fw = new FileWriter(poesiaCat);
          fw.write(textoPoesia);
          fw.close();
          
-         File cienciaCat = new File("Biblioteca/Ciencia/Catalogo.txt");
-         RandomAccessFile raf = new RandomAccessFile(cienciaCat, "rws");
+         File cienciaCat = new File("Biblioteca/Ciencia/Catalogo.txt"); //Añade el texto de ciencia en su catalogo
+         RandomAccessFile raf = new RandomAccessFile(cienciaCat, "rws");  
          raf.writeBytes(textoCiencia);
          
-         raf.seek("El origen de las especies(".length());
+         raf.seek("El origen de las especies(".length());               // Cambia el año por 1858
          raf.writeBytes("1858");
          raf.seek(0);
          
         }
-        
-        
 }
 ```
