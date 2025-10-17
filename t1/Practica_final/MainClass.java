@@ -28,7 +28,7 @@ public class Mavenproject1 {
         int userID = 0;
         int lastID = 0;
         int idToEliminate;
-        File cinema2000 = new File("Cinema2000");
+        File cinema2000 = new File("Cinema2000/reviews");
         File userFile = new File("Cinema2000/Users.txt");
         
         if(!cinema2000.exists()){
@@ -36,8 +36,9 @@ public class Mavenproject1 {
             userFile.createNewFile();
             User user = new User("Admin", "AdminPass", 0);
             createUser(user, userFile);
-        }    
-        lastID = getLastID(userFile);
+        }
+        List<User> userList = defineUsers(userFile);
+        lastID = getLastID(userList);
         userID = lastID;
         do{
             System.out.println("Menu biblioteca2000");
@@ -58,15 +59,16 @@ public class Mavenproject1 {
                     userName = sc.nextLine();
                     System.out.println("Contraseña");
                     userPass = sc.nextLine();
-                    lastID = getLastID(userFile);
+                    lastID = getLastID(userList);
                     userID = lastID;
                     User user = new User(userName, userPass, (userID + 1));
                     createUser(user, userFile);
+                    userList = defineUsers(userFile); 
                     break;
                 case 2:
                     System.out.println("Introduzca la id de el usuario a eliminar");
                     idToEliminate = sc.nextInt();
-                    List<User> userList = defineUsers(userFile);
+                    userList = defineUsers(userFile);
                     deleteUser(userList, userFile, idToEliminate);
                     break;
                 case 3:
@@ -107,12 +109,11 @@ public class Mavenproject1 {
         }      
     }
     
-    public static int getLastID(File file) throws FileNotFoundException, IOException{
-        RandomAccessFile raf = new RandomAccessFile(file, "r");
+    public static int getLastID(List<User> userList) throws FileNotFoundException, IOException{ 
         int id;
-        raf.seek(file.length() - 4);
-        id = raf.read();
-        return id - '0';
+        int index = userList.size() -1;
+        id = userList.get(index).getUserID();     
+        return id;
     }
     
     public static List<User> defineUsers(File file) throws IOException {
@@ -150,7 +151,7 @@ public class Mavenproject1 {
     
     public static void deleteUser(List<User> userList, File file, int id) throws IOException {
         RandomAccessFile raf = new RandomAccessFile(file, "rw");
-        raf.setLength(0); // borrar contenido
+        raf.setLength(0); 
 
         for (User user : userList) {
             if (user.getUserID() != id) {
