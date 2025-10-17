@@ -9,6 +9,8 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -25,6 +27,7 @@ public class Mavenproject1 {
         String userPass;
         int userID = 0;
         int lastID = 0;
+        int idToEliminate;
         File cinema2000 = new File("Cinema2000");
         File userFile = new File("Cinema2000/Users.txt");
         
@@ -61,7 +64,10 @@ public class Mavenproject1 {
                     createUser(user, userFile);
                     break;
                 case 2:
-                    System.out.println("eliminar");
+                    System.out.println("Introduzca la id de el usuario a eliminar");
+                    idToEliminate = sc.nextInt();
+                    List<User> userList = defineUsers(userFile);
+                    deleteUser(userList, userFile, idToEliminate);
                     break;
                 case 3:
                     System.out.println("Añadir review");
@@ -78,7 +84,7 @@ public class Mavenproject1 {
     
     public  static void createUser(User user, File file) throws IOException{
         FileWriter fw = new FileWriter(file ,true);
-        fw.write(user.getUserName() + " " + user.getUserPass() + " " + user.getUserID() + " #" + "\n");
+        fw.write(user.getUserName() + " " + user.getUserPass() + " " + user.getUserID() + "\n");
         fw.close();
     }
     
@@ -109,29 +115,50 @@ public class Mavenproject1 {
         return id - '0';
     }
     
-    public static void defineUsers(File file) throws IOException {
+    public static List<User> defineUsers(File file) throws IOException {
+    List<User> userList = new ArrayList<>();
+
     try (RandomAccessFile raf = new RandomAccessFile(file, "r")) {
         while (raf.getFilePointer() < raf.length()) {
-            StringBuilder name = new StringBuilder();
-            StringBuilder pass = new StringBuilder();
-
-            // Leer nombre hasta espacio
+            String name = "";
+            String pass = "";
+            String idStr = "";
             int b;
+
             while ((b = raf.read()) != 32 && b != -1) {
-                name.append((char) b);
+                name += (char) b;
             }
 
-            // Leer contraseña hasta espacio
             while ((b = raf.read()) != 32 && b != -1) {
-                pass.append((char) b);
+                pass += (char) b;
             }
 
-            // Leer ID (asumimos que es un entero de 4 bytes)
-            int id = raf.readInt();
+            while ((b = raf.read()) != 10 && b != -1 && b != 13) {
+                idStr += (char) b;
+            }
 
-            System.out.println("Nombre: " + name + ", Contraseña: " + pass + ", ID: " + id);
+            if (b == 13 && raf.getFilePointer() < raf.length()) {
+                raf.read(); 
+            }
+
+            int id = Integer.parseInt(idStr.trim());
+            userList.add(new User(name, pass, id));
         }
     }
+    return userList;
 }
+    
+    public static void deleteUser(List<User> userList, File file, int id) throws IOException {
+        RandomAccessFile raf = new RandomAccessFile(file, "rw");
+        raf.setLength(0); // borrar contenido
+
+        for (User user : userList) {
+            if (user.getUserID() != id) {
+            createUser(user, file);
+            }
+        }
+    }
+    
+    
 }
 
