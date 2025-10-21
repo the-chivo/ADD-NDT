@@ -215,7 +215,15 @@ rw: Modo lectura y escritura
 rwd: Lectura y escritura sincrona (No garantiza acctualizacion de metadatos)
 rws: Lectura y escritua síncorna (Garantiza actualización de metadatos)
 ### seek(long position)
-Permite posicionarnos en el punto que indiquemos en el fichero
-RandomAccessFile file = new RandomAccessFile(String path, string mode)
-file.seek(12);
+- Permite posicionarnos en el punto que indiquemos en el fichero
+- RandomAccessFile file = new RandomAccessFile(String path, string mode)
+- file.seek(12);
+### file.read();
+Permite leer un byte donde esta colocado el puntero
+### file.readLine();
+Permite leer la siguiente linea de bytes a partir de odnde esta colocado el puntero
+### file.write("example".getBytes);
+Permite escribir una cadena de bvytes donde esta colocado el puntero. El puntero avanza tras escribir.
+### file.writeBytes("Example");
+Permite escribir un String como una secuencia de bytes
 
