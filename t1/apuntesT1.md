@@ -189,3 +189,33 @@ char datos = (char)entrada.read();
 entrada.close();
 
 ## 3.4
+### Clase
+FileWriter
+### Constructor
+FileWriter(String name) o FleWriter(File file)
+### Uso
+Escribir datos de caracteres en un archivo. Es adecuado para escribir archivos de texto como .txt,.xml,.json,etc.
+### Metodo
+write()
+### Escribir
+Escribe un conjunto de caracteres en un fichero
+FileWriter escritor = new FileWriter(“desktop/fichero.txt”);
+escritor.write(“texto de ejemplo a escribir”);
+escritor.close();
+# Acceso aleatorio a ficheros mediante bytes
+## RandomAccessFile
+Lectura-Escritura
+Acceso a un punto determinado del fichero
+### Constructor
+RandomAccessFile(String path, string mode)
+RandomAccessFile(File file, String mode)
+### Metodos de acceso
+r: Modo lectura
+rw: Modo lectura y escritura
+rwd: Lectura y escritura sincrona (No garantiza acctualizacion de metadatos)
+rws: Lectura y escritua síncorna (Garantiza actualización de metadatos)
+### seek(long position)
+Permite posicionarnos en el punto que indiquemos en el fichero
+RandomAccessFile file = new RandomAccessFile(String path, string mode)
+file.seek(12);
+
