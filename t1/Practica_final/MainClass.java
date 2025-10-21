@@ -6,6 +6,7 @@ package com.mycompany.mavenproject1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -27,7 +28,7 @@ public class Mavenproject1 {
         String userPass;
         int userID = 0;
         int lastID = 0;
-        int idToEliminate;
+        int id;
         File cinema2000 = new File("Cinema2000/reviews");
         File userFile = new File("Cinema2000/Users.txt");
         
@@ -57,8 +58,28 @@ public class Mavenproject1 {
                     System.out.println("crear user");
                     System.out.println("Escriba su nombre de usuario");
                     userName = sc.nextLine();
+                    
+                    if(userName.matches(".*\\d.*")){
+                        System.out.println("El nombre de usuario no puede llevar numeros");
+                        break;
+                    }
+                    
+                    for(User user : userList){
+                        if(userName.equals(user.getUserName())){
+                            System.out.println("Nombre de ususario existente, usa otro");
+                            break;
+                        }
+                    }
+                    
                     System.out.println("Contraseña");
                     userPass = sc.nextLine();
+                    
+                    if(userPass.matches(".*\\d.*")){
+                        System.out.println("La contraseña no puede llevar numeros");
+                        break;
+                    }
+                    
+                    
                     lastID = getLastID(userList);
                     userID = lastID;
                     User user = new User(userName, userPass, (userID + 1));
@@ -67,25 +88,37 @@ public class Mavenproject1 {
                     break;
                 case 2:
                     System.out.println("Introduzca la id de el usuario a eliminar");
-                    idToEliminate = sc.nextInt();
+                    id = sc.nextInt();
                     userList = defineUsers(userFile);
-                    deleteUser(userList, userFile, idToEliminate);
+                    deleteUser(userList, userFile, id);
                     break;
                 case 3:
                     System.out.println("Añadir review");
-                    defineUsers(userFile);
+                    System.out.println("Escriba el id del usuario del cual es la review");
+                    id = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("Escriba el nombre de la pelicula");
+                    String moovie = sc.nextLine();
+                    System.out.println("Escriba su review");
+                    String review = sc.nextLine();
+                    userList = defineUsers(userFile);
+                    addReview(userList, id, moovie, review);
                     break;
                 case 4:
                     System.out.println("Mostrar review");
+                    System.out.println("Escriba la id del usuario el cual quiere ver sus reviews");
+                    id = sc.nextInt();
+                    showReview(userList, id);
+                    
                     break;
                 default:
-                    System.out.println("ue as puesto");
+                    System.out.println("Opcion inexistente");
             }   
         }while( opcion != 5);
     }
     
     public  static void createUser(User user, File file) throws IOException{
-        FileWriter fw = new FileWriter(file ,true);
+        FileWriter fw = new FileWriter(file ,true);         
         fw.write(user.getUserName() + " " + user.getUserPass() + " " + user.getUserID() + "\n");
         fw.close();
     }
@@ -159,6 +192,50 @@ public class Mavenproject1 {
             }
         }
     }
+    
+    public static void addReview(List<User> userList, int id, String moovie, String review) throws IOException{
+        User userTarget = null;
+        for (User user : userList) {
+            if (user.getUserID() == id) {
+                userTarget = user;
+                break;
+            }
+        }
+        if(userTarget == null){
+            System.out.println("User no encontrado");
+            return;
+        }
+        File file = new File("Cinema2000/reviews/" + userTarget.getUserName()+ "-" + userTarget.getUserID() + ".txt");
+        if(!file.exists()){
+            file.createNewFile();
+        }
+        FileWriter fw = new FileWriter(file, true);
+        fw.write("Pelicula: " + moovie + "\n");
+        fw.write("Reseña: " + review + "\n");
+        fw.write("--------------------------------------------" + "\n");
+        fw.close();
+    }
+    
+    public static void showReview(List<User> userList, int id) throws FileNotFoundException, IOException{
+        User userTarget = null;
+        for (User user : userList) {
+            if (user.getUserID() == id) {
+                userTarget = user;
+                break;
+            }
+        }
+        File file = new File("Cinema2000/reviews/" + userTarget.getUserName()+ "-" + userTarget.getUserID() + ".txt");
+        FileReader fr = new FileReader(file);
+        int i;
+        StringBuilder review = new StringBuilder();
+        while((i = fr.read()) != -1){
+            review.append((char)i);
+        }
+        fr.close();
+        System.out.println(review);
+    }  
+    
+    
     
     
 }
