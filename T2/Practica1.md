@@ -3,8 +3,13 @@
 ### -¿El uso de read modifica el archivo?
 No, read() solo devuelve un valor desde el flujo de entrada y avanza el cursor 1 hacia delante.
 
+
 ![Imagen](Images/cap1.PNG)
-* sasd
+
+
+###  -Utilizando read, ¿puedo leer más de un carácter?
+
+
 * dsd
 
 
