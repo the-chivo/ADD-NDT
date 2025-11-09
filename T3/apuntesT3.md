@@ -27,6 +27,7 @@ Para recorrer ficheros secuencialmente y realizar operaciones simples.
 |-----------------------------------|--------------------|
 | Basado en eventos(dispara eventos para saber cuando <br> inicia y cuando termina una etiqueta XML)| Carga todo el fichero en memoria|
 | Analiza nodo a nodo: <br> <persona <br> edad="30">Juan</persona> | Permite nuscar tags tanto hacia delante y hacia detras en todo el documento |
-|termina una etiqueta xml)          | Definición de B    |
-| Ejemplo de uso A                  | Ejemplo de uso B   |
-| Ventaja de A                      | Ventaja de B       |
+| Analiza sobre la marcha sin cargar el fichero en memoria | Almacena el fichero en memoria en forma de arbol |
+| Rapido en tiempo de ejecucion | Lento en tiempo de ejecución |
+| Solo permite lectura de ficheros XML | Se pueden insertar y/o eliminar nodos |
+
