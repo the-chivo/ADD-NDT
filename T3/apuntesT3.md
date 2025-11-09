@@ -5,5 +5,8 @@ Dom(Document Object Model) y Sax(Simple Api for XML)
  *  Leer (SAX y DOM) y escribir (DOM) fichjero XML
   * Detectar elementos de un fichero XML
   * Verifica si los ficheros son válidos
-    
+
+### 1.Ventajas y desventajas: DOM
+#### Ventaja:
+Al leer el fichero crea un arbol
 
