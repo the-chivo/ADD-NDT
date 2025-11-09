@@ -40,8 +40,8 @@ Para recorrer ficheros secuencialmente y realizar operaciones simples.
 public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-      factory.setValidating(true);
-      factory.setIgnoratingElementContentWhitespace(true);
+      factory.setValidating(true); // Valida si el xml cumple con las reglas de su DDT
+      factory.setIgnoringElementContentWhitespace(true); //Si elemento esta validado ignora los espacios en blanco del xml
 
       try{
            DocumentBuilder builder = factory.newDocumentBuilder();
