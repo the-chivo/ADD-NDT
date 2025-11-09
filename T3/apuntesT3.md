@@ -8,8 +8,17 @@ Dom(Document Object Model) y Sax(Simple Api for XML)
 
 ### 1.Ventajas y desventajas: DOM
 #### Ventaja:
-Al leer el fichero crea un arbol formado por nodos en memoria
+- Al leer el fichero crea un arbol formado por nodos en memoria
 #### Desventaja:
 - Almacena todo el fichero en memoria
 - Mas lento que SAX
-
+### 1. Ventajas y desventajas: SAX
+#### Ventaja:
+- Lee el fichero linea a linea, sin cargar todo el documento en memoria.
+#### Desventaja:
+- Menos potente que DOM al no conocer todo el documento.
+### 1.Recomendacion de uso.
+#### DOM:
+Para tareas complejas que requieran conocer todo el fichero y tengamos un objetivo claro.
+### SAX:
+Para recorrer ficheros secuencialmente y realizar operaciones simples.
