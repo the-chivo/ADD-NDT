@@ -31,3 +31,12 @@ Para recorrer ficheros secuencialmente y realizar operaciones simples.
 | Rapido en tiempo de ejecucion | Lento en tiempo de ejecución |
 | Solo permite lectura de ficheros XML | Se pueden insertar y/o eliminar nodos |
 
+## 2.Conversión de ficheros XML
+#### Existen muchas librerías que sirven como parsers de ficheros XML.
+- Java:
+- javax.xml.parsers
+## 2.1.Ejemplo de parseador DOM (Crear instancia)
+``
+sdd
+``
+
