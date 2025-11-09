@@ -10,6 +10,6 @@ Dom(Document Object Model) y Sax(Simple Api for XML)
 #### Ventaja:
 Al leer el fichero crea un arbol formado por nodos en memoria
 #### Desventaja:
--Almacena todo el fichero en memoria
--Mas lento que SAX
+- Almacena todo el fichero en memoria
+- Mas lento que SAX
 
