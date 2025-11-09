@@ -55,3 +55,12 @@ public static void main(String[] args) throws ParserConfigurationException, SAXE
 }
 ```
 
+#### Crear una instancia:
+```
+DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+```
+#### Validar documento:
+```
+factory.setValidating(true);
+// Si no es valido lanza una excepcion
+```
