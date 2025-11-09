@@ -103,4 +103,3 @@ File file = new file("ejemplo.xml");
 saxParser.parse(file, new DefaultHandler());
 ```
 No necesita objeto de tipo Document porque nose almacena en memoria.
-No necesita
