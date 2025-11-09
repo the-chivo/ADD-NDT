@@ -25,8 +25,8 @@ Para recorrer ficheros secuencialmente y realizar operaciones simples.
 ### 1.Comparacion
 | SAX                               | DOM                |
 |-----------------------------------|--------------------|
-| Basado en eventos(dispara eventos para sabercuando <br> inicia y cuando termina una etiqueta XML)| Carga todo el fichero en memoria|
-| para saber cuando inicia y cuando |                    |
+| Basado en eventos(dispara eventos para saber cuando <br> inicia y cuando termina una etiqueta XML)| Carga todo el fichero en memoria|
+| Analiza nodo a nodo: <br>      <persona <br> edad="30">Juan</persona> |                    |
 |termina una etiqueta xml)          | Definición de B    |
 | Ejemplo de uso A                  | Ejemplo de uso B   |
 | Ventaja de A                      | Ventaja de B       |
