@@ -48,8 +48,9 @@ public static void main(String[] args) throws ParserConfigurationException, SAXE
            File file = new File("ejemploXML.xml");
            Document doc = builder.parse(file);
            doc.getDocumentElement().normalize();
+
       }catch(ParserConfigurationException e){
-           System.err.println("Error al configurar el parser: " + e.getMessage());   
+           e.printStackTrace(); 
      }
 }
 ```
