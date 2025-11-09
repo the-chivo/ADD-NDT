@@ -23,7 +23,7 @@ Para tareas complejas que requieran conocer todo el fichero y tengamos un objeti
 #### SAX:
 Para recorrer ficheros secuencialmente y realizar operaciones simples.
 ### 1.Comparacion
-| Concepto A         | Concepto B         |
+| SAX                | DOM                |
 |--------------------|--------------------|
 | Definición de A    | Definición de B    |
 | Ejemplo de uso A   | Ejemplo de uso B   |
