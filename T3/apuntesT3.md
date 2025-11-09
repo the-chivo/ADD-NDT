@@ -39,15 +39,15 @@ Para recorrer ficheros secuencialmente y realizar operaciones simples.
 ```
 public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
-    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-    factory.setValidating(true);
-    factory.setIgnoratingElementContentWhitespace(true);
+      DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+      factory.setValidating(true);
+      factory.setIgnoratingElementContentWhitespace(true);
 
-    try{
+      try{
 
-    }catch(){
+      }catch(){
 
-   }
+     }
 }
 ```
 
