@@ -23,10 +23,10 @@ Para tareas complejas que requieran conocer todo el fichero y tengamos un objeti
 #### SAX:
 Para recorrer ficheros secuencialmente y realizar operaciones simples.
 ### 1.Comparacion
-| SAX                              | DOM                |
-|-----------------------           |--------------------|
-| Basado en eventos(dispara eventos|
-para saber cuando inicia y cuando  |
-termina una etiqueta xml)          | Definición de B    |
-| Ejemplo de uso A          | Ejemplo de uso B   |
-| Ventaja de A                 | Ventaja de B       |
+| SAX                               | DOM                |
+|-----------------------------------|--------------------|
+| Basado en eventos(dispara eventos |                    |
+| para saber cuando inicia y cuando  |                    |
+|termina una etiqueta xml)          | Definición de B    |
+| Ejemplo de uso A                  | Ejemplo de uso B   |
+| Ventaja de A                      | Ventaja de B       |
