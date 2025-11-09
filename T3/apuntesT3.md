@@ -47,7 +47,7 @@ public static void main(String[] args) throws ParserConfigurationException, SAXE
            DocumentBuilder builder = factory.newDocumentBuilder();
            File file = new File("ejemploXML.xml");
            Document doc = builder.parse(file);
-           doc.getDocumentElement().normalize();
+           doc.getDocumentElement().normalize();        // Convierte el file en un arbol DOM con todos los elementos leidos como nodos
 
       }catch(ParserConfigurationException e){
            e.printStackTrace(); 
