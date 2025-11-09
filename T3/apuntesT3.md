@@ -62,5 +62,11 @@ DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 #### Validar documento:
 ```
 factory.setValidating(true);
-// Si no es valido lanza una excepcion
 ```
+Si no es valido lanza una excepcion
+#### Ignorar los elementos innecesarios:
+```
+factory.setIgnoringElementContentWhitespace(true);
+```
+#### DocumentBuilder:
+Permite obtener un dato de tipo Document
