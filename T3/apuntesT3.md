@@ -37,6 +37,17 @@ Para recorrer ficheros secuencialmente y realizar operaciones simples.
 - javax.xml.parsers
 ## 2.1.Ejemplo de parseador DOM (Crear instancia)
 ``
-sdd
+public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+
+    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    factory.setValidating(true);
+    factory.setIgnoratingElementContentWhitespace(true);
+
+    try{
+
+    }catch(){
+
+   }
+}
 ``
 
