@@ -25,7 +25,7 @@ Para recorrer ficheros secuencialmente y realizar operaciones simples.
 ### 1.Comparacion
 | SAX                               | DOM                |
 |-----------------------------------|--------------------|
-| Basado en eventos(dispara eventos para saber cuando <br> inicia y cuando termina una etiqueta XML)| Carga todo el fichero en memoria|
+| Basado en eventos(dispara eventos para saber cuando inicia y cuando termina una etiqueta XML)| Carga todo el fichero en memoria|
 | Analiza nodo a nodo: <br> <persona <br> edad="30">Juan</persona> | Permite nuscar tags tanto hacia delante y hacia detras en todo el documento |
 | Analiza sobre la marcha sin cargar el fichero en memoria | Almacena el fichero en memoria en forma de arbol |
 | Rapido en tiempo de ejecucion | Lento en tiempo de ejecución |
