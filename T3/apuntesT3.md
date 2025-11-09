@@ -44,9 +44,12 @@ public static void main(String[] args) throws ParserConfigurationException, SAXE
       factory.setIgnoratingElementContentWhitespace(true);
 
       try{
-
-      }catch(){
-
+           DocumentBuilder builder = factory.newDocumentBuilder();
+           File file = new File("ejemploXML.xml");
+           Document doc = builder.parse(file);
+           doc.getDocumentElement().normalize();
+      }catch(ParserConfigurationException e){
+           System.err.println("Error al configurar el parser: " + e.getMessage());   
      }
 }
 ```
