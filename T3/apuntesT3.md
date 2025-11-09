@@ -36,7 +36,7 @@ Para recorrer ficheros secuencialmente y realizar operaciones simples.
 - Java:
 - javax.xml.parsers
 ## 2.1.Ejemplo de parseador DOM (Crear instancia)
-``
+```
 public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -49,5 +49,5 @@ public static void main(String[] args) throws ParserConfigurationException, SAXE
 
    }
 }
-``
+```
 
