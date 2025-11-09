@@ -22,3 +22,9 @@ Dom(Document Object Model) y Sax(Simple Api for XML)
 Para tareas complejas que requieran conocer todo el fichero y tengamos un objetivo claro.
 #### SAX:
 Para recorrer ficheros secuencialmente y realizar operaciones simples.
+### 1.Comparacion
+| Concepto A         | Concepto B         |
+|--------------------|--------------------|
+| Definición de A    | Definición de B    |
+| Ejemplo de uso A   | Ejemplo de uso B   |
+| Ventaja de A       | Ventaja de B       |
