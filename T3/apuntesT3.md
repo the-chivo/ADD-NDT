@@ -69,4 +69,38 @@ Si no es valido lanza una excepcion
 factory.setIgnoringElementContentWhitespace(true);
 ```
 #### DocumentBuilder:
-Permite obtener un dato de tipo Document
+Permite obtener un dato de tipo Document a partir de un documento XML para ya realizar operaciones.
+```
+DocumentBuilder builder = factory.newDocumentBuilder();
+```
+#### Leer el fichero XML:
+```
+Document doc = builder.parse(file);
+```
+## 2.2.Ejemplo de parseador SAX (Crear instancia)
+```
+public static void main(String[] args) {
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        factory.setValidating(true);
+        try{
+            SAXParser saxParser = factory.newSAXParser();
+            File file = new File("ejemplo.xml");
+            saxParser.parse(file, new DefaultHandler());
+        }catch(ParserConfigurationException | SAXException | IOException e){
+            e.printStackTrace();
+        }
+    }
+```
+
+#### Crear una instancia SAXParser:
+```
+SAXParser saxParser = factory.newSAXParser();
+```
+Utilizado para analizar el archivo XML
+#### Leer el fichero XML:
+```
+File file = new file("ejemplo.xml");
+saxParser.parse(file, new DefaultHandler());
+```
+No necesita objeto de tipo Document porque nose almacena en memoria.
+No necesita
