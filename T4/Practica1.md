@@ -3,4 +3,4 @@
 
 ## Parte previa 1:
 
-![Imagen](images/addcap0.PNG)
+![Imagen](images/addcap1.PNG)
