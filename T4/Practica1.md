@@ -26,3 +26,27 @@ captura de pantalla.
 
 
 ![Imagen](Images/addcap1.PNG)
+
+
+## Parte 1.
+
+Deberá crear un proyecto de tipo Maven e incluir la dependencia especificado en el siguiente 
+enlace (Driver JDBC PostgreSQL): 
+https://mvnrepository.com/artifact/org.postgresql/postgresql/42.7.4 
+Realice una captura de pantalla con la dependencia añadida. 
+
+
+![Imagen](Images/addcap2.PNG)
+
+
+
+## Parte 2.
+
+Parte 2. 
+El objetivo ahora es establecer una conexión entre un programa escrito en Java y nuestra base de 
+datos haciendo uso del conector añadido con la dependencia anterior. 
+El programa deberá conectarse a la base de datos e imprimir si la conexión ha sido o no exitosa. 
+Realice una captura de pantalla de la salida de su programa e incluya el código utilizado. 
+
+
+![Imagen](Images/addcap3.PNG)
