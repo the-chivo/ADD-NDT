@@ -42,7 +42,7 @@ Realice una captura de pantalla con la dependencia añadida.
 
 ## Parte 2.
 
-Parte 2. 
+
 El objetivo ahora es establecer una conexión entre un programa escrito en Java y nuestra base de 
 datos haciendo uso del conector añadido con la dependencia anterior. 
 El programa deberá conectarse a la base de datos e imprimir si la conexión ha sido o no exitosa. 
@@ -50,3 +50,15 @@ Realice una captura de pantalla de la salida de su programa e incluya el código
 
 
 ![Imagen](Images/addcap3.PNG)
+
+
+## Parte 3.
+
+
+Una vez establecida la conexión podemos utilizar el siguiente código para mostrar la información 
+de la BDD: 
+Explique con sus palabras que hace el código anterior línea a línea: 
+Realice una captura de pantalla el resultado obtenido por consola:
+
+
+![Imagen](Images/addcap4.PNG)
