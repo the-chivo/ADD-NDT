@@ -212,3 +212,29 @@ frecuencia, procedemos a estudiar sus ventajas e inconvenientes.
 ### Driver tipo 1
 ####   Ventajas:
 *  Solemos encontrarlos fácilmente, ya que se distribuyen con el paquete del lenguaje Java.
+*  Acceso a gran cantidad de drivers ODBC.
+#### Inconvenientes:
+* Rendimiento: demasiadas capas intermedias.
+*  Limitación de funcionalidad. (Características comunes de base de datos).
+*  No funcionan bien con applets. Problemas en navegadores.
+*  
+### Driver tipo 2
+####   Ventajas:
+*  Ofrecen rendimiento superior al de tipo 1. ya que son llamadas nativas. 
+#### Inconvenientes:
+* La librería de la BDD, forzosamente, se inicia en la parte de cliente. No se pueden usar en internet.
+*  Interfaz nativa Java. No movible entre plataformas.
+
+### Driver tipo 3
+####   Ventajas:
+*  No necesita librería del fabricante. No es necesario llevar al cliente este aspecto.
+*   Son los que mejor rendimiento dan en internet, muchas opciones de portabilidad y escalabilidad.
+#### Inconvenientes:
+* Requieren de un código especifico de BDD para la capa intermedia
+* 
+### Driver tipo 4
+####   Ventajas:
+*  Buen rendimiento.
+*   No necesitan instalar un software especial ni en la parte del servidor, ni en la parte de cliente. Drivers de fácil acceso
+#### Inconvenientes:
+* El usuario necesitará distinto software de conexión (driver) para cada base de datos. 
