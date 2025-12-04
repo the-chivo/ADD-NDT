@@ -110,3 +110,106 @@ Connection dbConnection = null;
 Statement statement = null;
 }
 ```
+
+
+En el código anterior, podemos ver cómo se definen ciertas variables de tipo String que nos van a servir 
+para realizar la conexión con la base de datos más tarde. 
+Instanciamos el usuario y la contraseña de nuestra conexión y también una variable de tipo Connection y otra 
+Statement. 
+Connection es una interfaz que representa una conexión directa con una base de datos. El motivo de que 
+sea una interfaz es porque tendrá distintas implementaciones posibles. 
+Como comentamos anteriormente, JDBC ofrece distintas formas para realizar conexiones. Nos 
+centraremos en establecer la conexión con “java.sql.DriverManager”, recomendada para aquellos aplicativos 
+que se hayan desarrollado en lenguaje Java.
+
+## 3.1 Establecer conexion
+
+Podremos tener instaladas tantas conexiones como queramos. Cada conexión y cada base de datos utilizará 
+drivers JDBC, y, a su vez, cada uno de ellos implementará la interfaz “java.sql.Driver”. Con el método principal 
+connect(), obtendremos el objeto Connection y estableceremos la conexión con base de datos:
+
+```
+try{
+  Class.forName(DRIVER);
+  dbConnection = DriverManager.getConnection(URL_CONEXION, usuario, password);
+  String selectTableSQL = "SELECT ID, USERNAME, PASSWORD, NOMBRE FROM Usuarios";
+  statement = dbConnection.createStatement();
+  ResultSet rs = statement.executeQuery(selectTableSQL);
+  while(rs.next()){
+    String id = rs.getString("ID");
+    String usr = rs.getString("USERNAME");
+    String psw = rs.getString("PASSWORD");
+    String nombre = rs.getString("NOMBRE");
+    System.out.println("userid: " + id);
+    System.out.println("usr: " + usr);
+    System.out.println("psw: " + psw);
+    System.out.println("nombre: " + nombre);
+  }
+
+
+```
+
+El objetivo de la clase DriverManager, realmente, es gestionar los drivers que poseemos en nuestra 
+aplicación y permitir en una misma capa el acceso a todos y cada uno de ellos. Algo que debemos tener en 
+cuenta es que DriverManager necesita que todos y cada uno de los drivers estén registrados antes de su uso. 
+Las conexiones deben quedar almacenadas antes de acceder a la base de datos. 
+Después de haber registrado el driver, se pueden usar los métodos estáticos para hacer “getConnection”, 
+usándolo directamente para establecer conexiones. 
+Tal y como podemos observar en el código anterior, englobaremos una serie de operaciones en un bloque 
+try/catch. La primera instrucción que daremos es: “Class.forName()”, de esta forma registraremos el driver 
+que anteriormente hemos indicado en la variable estática “DRIVER”. 
+Una vez realizada una buena introducción de la clase “DriverManager” y de sus funcionalidades, si 
+continuamos con el código, encontraremos cómo se está usando el método “getConnection”, al que le 
+pasamos por parámetro la URL de conexión previamente definida: usuario y contraseña. 
+Todo esto nos devolverá un objeto de tipo Connetion, en nuestro caso lo hemos llamado dbConnection.
+
+## 3.2 Operaciones con variables y excepciones.
+
+Siguiendo con el ejemplo, una vez que DriverManager nos ha devuelto la conexión a base de datos, 
+realizaremos un ejemplo sencillo de consulta simple y la almacenaremos en una variable de tipo String 
+para más tarde ser ejecutada. 
+Con la variable Connection, ejecutamos el método “createStatement” y lo asignamos a la variable definida 
+al principio del ejercicio de tipo Statement. Más tarde, simplemente, tendremos que realizar la consulta con el 
+método “executeQuery” pasándole como parámetro la query previamente definida en la variable de tipo 
+String. 
+El resultado de la query se asignará a una variable de tipo Resulset. Como podemos comprobar en el 
+código, dicho Resulset está envuelto en un bucle “while”, ya que por cada fila que nos devuelva esta tabla, 
+podremos ir dando una vuelta más al bucle y seguir mostrando los resultados. En esta ocasión, hemos 
+decidido realizar la operación de mostrar por pantalla tanto el ID, el USERNAME, el PASSWORD y el 
+NOMBRE, que son columnas de la tabla Usuarios que hemos consultado de prueba. 
+A continuación, veremos la parte final del código donde vienen indicadas ciertas excepciones:
+
+```
+}catch (SQLException e){
+  System.out.println(e.getMessage());    
+}catch (ClassNotFoundException e){
+   System.out.println(e.getMessage());
+}finally{
+  if(statement != null){
+    statement.close;
+  }
+  if(dbConnection != null){
+    dbConnection.close();
+  }
+}
+
+```
+
+Inicialmente, nos encontramos con SQLException, dicha excepción es capturada si a la hora de ejecutar el 
+método “executeQuery” algo va mal en base de datos, ya sea gramaticalmente, sintácticamente, etc. 
+La excepción ClassNotFoundException es lanzada y capturada en este punto si en nuestra línea: “Class. 
+forName(DRIVER)”, el fichero del driver que le estamos indicando no encontrara la librería. 
+Por último, comentar y recordar que la sentencia finally se ejecutará siempre, hayamos capturado 
+excepción o no. En esta, simplemente, se realizan los cierres de la clase Statement y del objeto Connection 
+que, a su vez, en este punto pueden lanzar una excepción que será recogida y lanzada a la capa superior a 
+través de la palabra clave “Throws” en la definición de nuestro método.
+
+# 4. Ventajas e inconvenientes del uso de conectores
+
+Una vez nombrados y explicados los cuatro tipos de conectores que nos podemos encontrar con más 
+frecuencia, procedemos a estudiar sus ventajas e inconvenientes.
+
+### Driver tipo 1
+#### Ventajas:
+• Solemos encontrarlos fácilmente, ya que se distribuyen con el paquete del lenguaje Java. 
+• Acceso a gran cantidad de drivers ODBC.
