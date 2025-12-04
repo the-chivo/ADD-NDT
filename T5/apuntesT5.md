@@ -210,6 +210,6 @@ Una vez nombrados y explicados los cuatro tipos de conectores que nos podemos en
 frecuencia, procedemos a estudiar sus ventajas e inconvenientes.
 
 ### Driver tipo 1
-#### Ventajas:
-• Solemos encontrarlos fácilmente, ya que se distribuyen con el paquete del lenguaje Java. 
-• Acceso a gran cantidad de drivers ODBC.
+####   Ventajas:
+        • Solemos encontrarlos fácilmente, ya que se distribuyen con el paquete del lenguaje Java. 
+        • Acceso a gran cantidad de drivers ODBC.
