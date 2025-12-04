@@ -1,14 +1,22 @@
 
-package com.mycompany.addt4ef;
-//TODO: incluir los import necesarios
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.addt4ef1;
+
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+/**
+ *
+ * @author adria
+ */
 public class ConfiguracionXML {
-
+    
     private static String driver;
     private static String url;
     private static String usuario;
@@ -55,12 +63,3 @@ public class ConfiguracionXML {
         return password;
     }
 }
-
-
-
-
-
-
-
-
-
