@@ -1,20 +1,34 @@
-// Código original disponible en https://java.codeandcoke.com/apuntes:dao
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.addt4ef1;
 
-public class BookDao {
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author adria
+ */
+public class EntrenadorDao {
  
     private Connection connection;
     
-    public BookDao(Connection connection) {
+    public EntrenadorDao(Connection connection) {
         this.connection = connection;
     }
     
-    public void add(Book book) {
-        String sql = "INSERT INTO books (title, author, publisher) VALUES (?, ?, ?)";
+    public void add(Entrenador entrenador) {
+        String sql = "INSERT INTO entrenador (nombre, raza, n_partidos) VALUES (?, ?, ?)";
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, book.getTitle());
-            statement.setString(2, book.getAuthor());
-            statement.setString(3, book.getPublisher());
+            statement.setString(1, entrenador.getNombre());
+            statement.setString(2, entrenador.getRaza());
+            statement.setInt(3, entrenador.getPartidos());           
             statement.executeUpdate();
         } catch (SQLException sqle) {
             System.out.println("No se ha podido conectar con el servidor de base de datos. Comprueba que los datos son correctos y que el servidor se ha iniciado");
@@ -22,11 +36,12 @@ public class BookDao {
         }
     }
     
-    public void delete(String title) {
-        String sql = "DELETE FROM books WHERE title = ?";
+    public void deleteEntrenador(int id) {
+        String sql = "DELETE FROM entrenador WHERE id = ?";
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, title);
+            statement.setInt
+        (1, id);
             statement.executeUpdate();
     
         } catch (SQLException sqle) {
@@ -35,14 +50,12 @@ public class BookDao {
         }
     }
     
-    public boolean modify(String title, Book book) {
-        String sql = "UPDATE books SET title = ?, author = ?, publisher = ? WHERE title = ?";
+    public void modifyNPartidos(int id, Entrenador entrenador) {
+        String sql = "UPDATE entrenador SET n_partidos = ? WHERE id = ?";
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, book.getTitle());
-            statement.setString(2, book.getAuthor());
-            statement.setString(3, book.getPublisher());
-            statement.setString(4, title);
+            statement.setInt(1, entrenador.getPartidos());          
+            statement.setInt(2, id);
             statement.executeUpdate();
         } catch (SQLException sqle) {
             System.out.println("No se ha podido conectar con el servidor de base de datos. Comprueba que los datos son correctos y que el servidor se ha iniciado");
@@ -50,46 +63,26 @@ public class BookDao {
         }
     }
     
-    public ArrayList<Book> findAll() {
-        String sql = "SELECT * FROM books ORDER BY title";
-        ArrayList<Book> books = new ArrayList<>();
+    public ArrayList<Entrenador> findAll() {
+        String sql = "SELECT * FROM entrenador ORDER BY id";
+        ArrayList<Entrenador> entrenadores = new ArrayList<>();
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                Book book = new Book();
-                book.setTitle(resultSet.getString("title"));
-                book.setAuthor(resultSet.getString("author"));
-                book.setPublisher(resultSet.getString("publisher"));
-                books.add(book);
+                String nombre = resultSet.getString("nombre");
+                String raza = resultSet.getString("raza");
+                int nPartidos = resultSet.getInt("n_partidos");
+                Entrenador entrenador = new Entrenador(nombre, raza, nPartidos);
+                entrenador.setId(resultSet.getInt("id"));
+                entrenadores.add(entrenador);
             }
         } catch (SQLException sqle) {
             System.out.println("No se ha podido conectar con el servidor de base de datos. Comprueba que los datos son correctos y que el servidor se ha iniciado");
             sqle.printStackTrace();
         }
 
-        return books;
-    }
+        return entrenadores;
+    }    
     
-    public Book findByTitle(String title) {
-        String sql = "SELECT * FROM books WHERE title = ?";
-        Book book = null;
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, title);
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                book = new Book();
-                book.setTitle(resultSet.getString("title"));
-                book.setAuthor(resultSet.getString("author"));
-                book.setPublisher(resultSet.getString("publisher"));
-            }
-        } catch (SQLException sqle) {
-            System.out.println("No se ha podido conectar con el servidor de base de datos. Comprueba que los datos son correctos y que el servidor se ha iniciado");
-            sqle.printStackTrace();
-        }
-
-        return book;
-    }
 }
