@@ -1,5 +1,9 @@
 
-package com.mycompany.addt4ef;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.addt4ef1;
 
 public class Jugador {
 
@@ -11,7 +15,7 @@ public class Jugador {
 
     // Constructor
 
-    public Jugador(String nombre, String posicion, double valor, boolean herido, int entrenadorId) {
+    public Jugador(String nombre, String posicion, boolean herido, int entrenadorId) {
         this.nombre = nombre;
         this.posicion = posicion;
         this.herido = herido;
@@ -28,14 +32,12 @@ public class Jugador {
     public String getPosicion() { return posicion; }
     public void setPosicion(String posicion) { this.posicion = posicion; }
 
-    public boolean isHerido() { return herido; }
+    public boolean getHerido() { return herido; }
     public void setHerido(boolean herido) { this.herido = herido; }
 
     public int getEntrenadorId() { return entrenadorId; }
     public void setEntrenadorId(int entrenadorId) { this.entrenadorId = entrenadorId; }
 }
-
-
 
 
 
