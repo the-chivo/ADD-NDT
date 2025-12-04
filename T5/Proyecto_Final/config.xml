@@ -1,0 +1,6 @@
+<config> 
+<driver>org.postgresql.Driver</driver> 
+<url>jdbc:postgresql://localhost:5432/postgres</url> 
+<user>postgres</user> 
+<password>1234</password> 
+</config>
