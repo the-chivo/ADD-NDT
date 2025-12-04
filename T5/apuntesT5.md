@@ -211,5 +211,4 @@ frecuencia, procedemos a estudiar sus ventajas e inconvenientes.
 
 ### Driver tipo 1
 ####   Ventajas:
-• Solemos encontrarlos fácilmente, ya que se distribuyen con el paquete del lenguaje Java. 
-• Acceso a gran cantidad de drivers ODBC.
+*  Solemos encontrarlos fácilmente, ya que se distribuyen con el paquete del lenguaje Java.
