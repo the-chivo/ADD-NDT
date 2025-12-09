@@ -62,3 +62,11 @@ Realice una captura de pantalla el resultado obtenido por consola:
 
 
 ![Imagen](Images/addcap4.PNG)
+
+
+<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.7.4</version>
+</dependency>
