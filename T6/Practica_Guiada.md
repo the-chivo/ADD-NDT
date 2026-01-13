@@ -14,5 +14,8 @@
 ### • Metadatos del proyecto, lo configuramos como en la siguiente imagen (modifique el grupo para incluir su nombre y primer apellido):
 
 ### En la parte de la derecha podemos elegir y añadir dependencias a nuestro proyecto de forma muy sencilla, en nuestro caso vamos a añadir nuestra base de datos de tipo H2: "H2 Database"
+### Vamos a añadir también el módulo Spring Web para simular el funcionamiento de una aplicación web en este ejercicio: "Spring Data JPA"
+### También añadimos esta dependencia: "Spring Web"
+
 
 
