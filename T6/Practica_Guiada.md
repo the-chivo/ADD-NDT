@@ -36,3 +36,11 @@ spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ```
 "Recuerda que en este momento aún no esta añadida la linea que permite interactuar con la consola"
 
+### Como vemos en la segunda línea, la base de datos está definida en memoria:
+```
+spring.datasource.url=jdbc:h2:file:~/test;
+```
+### Lo vamos a cambiar para utilizar una base de datos embebida:
+```
+spring.datasource.url=jdbc:h2:mem:testdb
+```
