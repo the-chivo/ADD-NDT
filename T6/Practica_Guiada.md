@@ -34,5 +34,5 @@ spring.datasource.username=sa
 spring.datasource.password=password
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ```
-
+#### "Recuerda que en este momento ahun no esta añadida la linea que permite interactuar con la consola"
 
