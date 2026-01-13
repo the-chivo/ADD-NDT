@@ -17,7 +17,7 @@
 ### Vamos a añadir también el módulo Spring Web para simular el funcionamiento de una aplicación web en este ejercicio: "Spring Data JPA"
 ### También añadimos esta dependencia: "Spring Web"
 ### A continuación incluya una captura de pantalla de la web anteriormente mencionada con toda la configuración realizada:
-
+![Imagen](Images/cap1.PNG)
 
 
 
