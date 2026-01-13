@@ -26,9 +26,13 @@
 ### Por defecto Spring Boot como ya hemos mencionado en las diapositivas del tema, genera algunos archivos de configuración de forma automática. Localiza el archivo “Application.properties” e incluye una captura de pantalla de la configuración de la base de datos H2. (En caso de que no se haya generado esta configuración, añádela al archivo).   
 ![Imagen](Images/cap2.PNG)
 #### A texto:
-'''
-dsdsd
-'''
-
+```
+spring.application.name=practica5
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+```
 
 
