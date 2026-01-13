@@ -74,3 +74,5 @@ spring.h2.console.enabled=true
 ```
 ### De esta forma si ejecutamos nuestra aplicación podemos acceder a la siguiente URL (http://localhost:8080/h2-console/) y acceder al panel de gestión de la base de datos. Pero antes para ejecutar la aplicación  debemos realizar una configuración. Hacemos click en “Maven build” y añadimos el siguiente “goal”: 
 ![Imagen](Images/cap7.PNG)
+### Incluya una captura de pantalla dentro del gestor de base de datos H2 donde se vea la tabla creada: (Nota: Si encuentra un error relacionado con la existencia de la base de datos deberá crear un fichero de tipo “test.mv.db”)
+![Imagen](Images/cap5.PNG)
