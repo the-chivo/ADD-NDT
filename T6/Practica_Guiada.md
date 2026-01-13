@@ -26,6 +26,9 @@
 ### Por defecto Spring Boot como ya hemos mencionado en las diapositivas del tema, genera algunos archivos de configuración de forma automática. Localiza el archivo “Application.properties” e incluye una captura de pantalla de la configuración de la base de datos H2. (En caso de que no se haya generado esta configuración, añádela al archivo).   
 ![Imagen](Images/cap2.PNG)
 #### A texto:
+'''
+dsdsd
+'''
 
 
 
