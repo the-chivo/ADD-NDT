@@ -5,7 +5,7 @@
 
 # Parte 1
 
-#### Descarga de Spring Boot y configuración del proyecto. 
+### Descarga de Spring Boot y configuración del proyecto. 
 ### En primer lugar nos dirigimos a la siguiente página web: https://start.spring.io/. 
 ### Esta página nos permite configurar: 
 ### Tipo de proyecto: elegiremos Maven. 
@@ -18,6 +18,13 @@
 ### También añadimos esta dependencia: "Spring Web"
 ### A continuación incluya una captura de pantalla de la web anteriormente mencionada con toda la configuración realizada:
 ![Imagen](Images/cap1.PNG)
+
+### Finalmente hacemos click en “Generate” y se nos descargará el proyecto con toda la configuración realizada.En nuestro archivo pom.xml podemos ver como se nos ha añadido por ejemplo la dependencia de la base de datos H2.
+
+# Parte 2
+
+
+
 
 
 
