@@ -13,4 +13,6 @@
 ### • Versión de Spring Boot: Dejamos la versión por defecto. 
 ### • Metadatos del proyecto, lo configuramos como en la siguiente imagen (modifique el grupo para incluir su nombre y primer apellido):
 
+### En la parte de la derecha podemos elegir y añadir dependencias a nuestro proyecto de forma muy sencilla, en nuestro caso vamos a añadir nuestra base de datos de tipo H2: "H2 Database"
+
 
