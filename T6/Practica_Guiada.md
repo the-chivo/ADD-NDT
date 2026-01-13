@@ -56,3 +56,19 @@ CREATE TABLE IF NOT EXISTS Pepinos (
 	Color VARCHAR(50)		
 );
 ```
+### Otra cosa que podemos habilitar en Spring Boot es el acceso a nuestra base de datos o a nuestro panel de gestión de base de datos. Para ello añadimos la siguiente línea a nuestro fichero “application.properties”:
+```
+spring.h2.console.enabled=true
+```
+Incluya el contenido del archivo completo con la nueva configuración añadida:
+![Imagen](Images/cap4.PNG)
+#### A texto:
+```
+spring.application.name=practica5
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled=true
+```
