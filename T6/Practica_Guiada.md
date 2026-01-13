@@ -44,3 +44,8 @@ spring.datasource.url=jdbc:h2:file:~/test;
 ```
 spring.datasource.url=jdbc:h2:mem:testdb
 ```
+# Parte 3
+###  En este punto ya tenemos la aplicación configurada y lista para trabajar con una base de datos. Nos vamos a dirigir a la ruta “src/main/resources” y vamos a crear un fichero llamado “data.sql” donde crearemos una primera tabla.  
+
+### Deberá crear a continuación una tabla (de libre elección, pero con al menos 3 campos y usando dos tipos de datos diferentes). Incluya el contenido del fichero creado.
+![Imagen](Images/cap3.PNG)
