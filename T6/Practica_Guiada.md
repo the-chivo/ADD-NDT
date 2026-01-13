@@ -72,3 +72,5 @@ spring.datasource.password=password
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.h2.console.enabled=true
 ```
+### De esta forma si ejecutamos nuestra aplicación podemos acceder a la siguiente URL (http://localhost:8080/h2-console/) y acceder al panel de gestión de la base de datos. Pero antes para ejecutar la aplicación  debemos realizar una configuración. Hacemos click en “Maven build” y añadimos el siguiente “goal”: 
+![Imagen](Images/cap7.PNG)
