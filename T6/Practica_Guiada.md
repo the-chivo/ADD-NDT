@@ -5,3 +5,7 @@
 
 # Parte 1
 
+### Descarga de Spring Boot y configuración del proyecto. 
+### En primer lugar nos dirigimos a la siguiente página web: https://start.spring.io/. 
+### Esta página nos permite configurar: 
+
