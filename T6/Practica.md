@@ -25,4 +25,4 @@ CREATE TABLE IF NOT EXISTS pedidos(
 
 ## Incluya una captura de pantalla del gestor H2 donde se vean las tablas creadas:
 
-![Imagen](Images/cap02.PNG)
+![Imagen](Images/cap02.png)
