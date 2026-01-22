@@ -22,3 +22,7 @@ CREATE TABLE IF NOT EXISTS pedidos(
 	FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 ```
+
+## Incluya una captura de pantalla del gestor H2 donde se vean las tablas creadas:
+
+![Imagen](Images/cap01.PNG)
