@@ -22,3 +22,17 @@ Public class Usuario{
   private String nombre;
 }
 ```
+
+```
+Usuario Juan = new Usuario (1, Juan)
+Usuario Manuel = new Usuario (2, Manuel
+```
+
+### Bases de datos
+| usuarios                 | 
+| Java(POO) | Bases de datos |
+|--------------|--------------|
+| Clases <----- |-----> Tablas |
+| Objeotos <----- | -----> Filas |
+| Atributos <----- | -----> Columnas |
+
