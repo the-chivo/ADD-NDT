@@ -29,7 +29,9 @@ Usuario Manuel = new Usuario (2, Manuel
 ```
 
 ### Bases de datos
-####         Usuarios
+
+<p align="center"><b>usuarios</b></p>
+
 | Java(POO) | Bases de datos |
 |--------------|--------------|
 | Clases <----- |-----> Tablas |
