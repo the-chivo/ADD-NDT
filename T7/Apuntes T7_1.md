@@ -96,3 +96,9 @@ realizar consultas ORM
 | .PROPERTIES          | Objetos de persistencia | Mapeo XML     |
 | X       | Hibernate     | x   |
 | x       | Base de datos     | x |
+
+
+## Aplicacion
+
+#### - Cases y objetos
+
