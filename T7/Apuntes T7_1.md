@@ -100,5 +100,27 @@ realizar consultas ORM
 
 ## Aplicacion
 
-#### - Cases y objetos
+- Clases y objetos
+- No nos preocupamos de consultas SQL
+
+## Objetos de persistencia
+
+- Obnjetos que utiliza Hibernate para manipular la BD
+- Permiten manipular objetos que se traducirán en sentencias SQL
+
+##  PROPERTIES
+
+- Archivo de ocnfiguracion de Hibernate
+- Define propiedades como por ejemplo URL de la base de datos, usuario, contraseña, etc
+
+## Mapedo XML
+
+
+- Define el mapeo entre las clases Java y las tablas de la base de datos. (Hoy en día es lo más común utilizar anotaciones)
+
+## Hibernate y base de datos
+
+- Haremos uso de Spring Boot
+- https://start.spring.io/
+- Añadimos la dependencia de Spring Data JPA
 
