@@ -15,12 +15,13 @@
 # 2. Configuración del proyecto
 
 
-| Campo        | Tipo de dato     | Descripción  |    f        |
-|--------------|------------------|-------------------------------------|---|
-| id           | INT (PK)         | Identificador único del usuario     | s|
-| nombre       | VARCHAR(50)      | Nombre del usuario                  |s |
-| email        | VARCHAR(100)     | Correo electrónico (único)          | s|
-| contraseña   | VARCHAR(255)     | Hash de la contraseña               |w |
-| creado_en    | DATETIME         | Fecha de creación del registro      | s|
+| Java  | Maven |Hibernate | Spring Boot | PostgreSQL |
+|--------------|------------------|-------------------------------------|---|--|
+| Lenguaje | Gestor de dependencias  | ORM| Framewoek Java|Base de datos|
+
+## Descargar postgresql
+
+#### https://www.postgresql.org/download/
+
 
 
