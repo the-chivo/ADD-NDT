@@ -89,3 +89,10 @@ realizar consultas ORM
 - Muy completo, permite sentencias ORM Y SQL(HQL) que mejora la sintaxis SQL y su eficiencia
 
 # 4. Hibernate
+
+
+| x      | Aplicacion     | x                    |
+|--------------|------------------|-------------------------------------|
+| .PROPERTIES          | Objetos de persistencia | Mapeo XML     |
+| X       | Hibernate     | x   |
+| x       | Base de datos     | x |
