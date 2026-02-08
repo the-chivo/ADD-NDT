@@ -23,5 +23,18 @@
 
 #### https://www.postgresql.org/download/
 
+## 1. Aceso a postgreSQL en bash
+
+```
+psql postgres
+```
+
+## 2. Crear un usuario
+````
+postgres=# CREATE USER postgres WITH PASSWORD `postgres`;
+````
+
+## 3. Crear una base de datos
+## 4 Descargamos DBeaver (Sistema )
 
 
