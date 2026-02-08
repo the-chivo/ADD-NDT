@@ -70,7 +70,7 @@ spring.datasource.password=postgres
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
-
+```
 ## 10. Configurar la ejecución de la aplicación
 
 - Click derecho en el proyecto y Maven build
