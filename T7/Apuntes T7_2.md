@@ -131,3 +131,7 @@ private int duracion;
 }
 ```
 
+## 4. Debemos definir los get() y los set()
+
+## 5. Si lanzamos la aplicaciòi veremos que se ha creado la tabla
+
