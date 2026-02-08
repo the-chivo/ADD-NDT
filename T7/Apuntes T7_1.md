@@ -7,6 +7,18 @@ Clases----------Tablas
 
 | Java(POO) | Bases de datos |
 |--------------|--------------|
-| Clases <---- |----> Tablas |
-| Fila 2 Col 1 | Fila 2 Col 2 |
+| Clases <----- |-----> Tablas |
+| Objeotos <----- | -----> Filas |
+| Atributos <----- | -----> Columnas |
 
+
+
+
+
+### Java(POO)
+```
+Public class Usuario{
+  private int id;
+  private String nombre;
+}
+```
