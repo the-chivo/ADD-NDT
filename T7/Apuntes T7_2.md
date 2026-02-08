@@ -37,6 +37,7 @@ postgres=# CREATE USER postgres WITH PASSWORD `postgres`;
 ## 3. Crear una base de datos
 ```
 postgres=# CREATE DATABASE acceso_a_datos;
+```
 ## 4 Descargamos DBeaver (Sistema )
 #### https://dbeaver.io/
 
@@ -117,15 +118,16 @@ private int duracion;
 ## 3. Debemos crear los constructores
 
 ```
-private int duracion;
-
-public Pelicula(){
-}
-
-public Pelicula(String titulo, String director, int duracion){
-  this.titulo = titulo;
-  this.director = director;
-  this.duracion;
+  private int duracion;
+  
+  public Pelicula(){
+  }
+  
+  public Pelicula(String titulo, String director, int duracion){
+    this.titulo = titulo;
+    this.director = director;
+    this.duracion;
+  }
 }
 ```
 
