@@ -16,7 +16,7 @@
 
 
 | Campo        | Tipo de dato     | Descripción  |    f        |
-|--------------|------------------|-------------------------------------|s |
+|--------------|------------------|-------------------------------------|---|
 | id           | INT (PK)         | Identificador único del usuario     | s|
 | nombre       | VARCHAR(50)      | Nombre del usuario                  |s |
 | email        | VARCHAR(100)     | Correo electrónico (único)          | s|
