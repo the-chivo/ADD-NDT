@@ -50,11 +50,42 @@ mediante los objetos de nuestros programas
 
 # 2. Ventajas y desventajas ORMs
 
-| Ventajas  | Desventajas |
-|--------------|--------------|
-| Rapidez en el desarrollo |Mapeo automático -> Peor 
-rendimiento |
-| Desarrollo orientado a objetos |Curva de aprendizaje
- |
-| Abstracción al no usar sentencias | |
-| Mantenimiento sencillo |  |
+### Ventajas
+- Rapidez en el desarrollo
+- Desarrollo orientado a objetos
+- Abstracción al no usar sentencias
+- Mantenimiento sencillo
+
+### Desventajas
+
+- Mapeo automático -> Peor rendimiento
+- Curva de aprendizaje
+
+# 3.Herramientas ORM
+
+## ORMs para java
+
+### EBEAN
+
+- Soporte para gran 
+cantidad de bases de 
+datos: H2, postgreSQL, 
+MySQL…
+- Versatilidad: consultas 
+ORM junto a SQL
+- Eficiente y buen 
+rendimiento
+
+### IBatis
+- Desarrollado por Apache
+- Facil aprendizaje de desarrollo
+- Únicamente podemos 
+realizar consultas ORM
+
+### HIBERNATE
+
+- Más popular y utilizado
+- Fácil aprendizaje y desarrollo
+- Muy completo, permite sentencias ORM Y SQL(HQL) que mejora la sintaxis SQL y su eficiencia
+
+# 4. Hibernate
