@@ -16,11 +16,11 @@
 
 
 | Campo        | Tipo de dato     | Descripción  |    f        |
-|--------------|------------------|-------------------------------------| 
-| id           | INT (PK)         | Identificador único del usuario     | 
-| nombre       | VARCHAR(50)      | Nombre del usuario                  |
-| email        | VARCHAR(100)     | Correo electrónico (único)          |
-| contraseña   | VARCHAR(255)     | Hash de la contraseña               |
-| creado_en    | DATETIME         | Fecha de creación del registro      |
+|--------------|------------------|-------------------------------------|s |
+| id           | INT (PK)         | Identificador único del usuario     | s|
+| nombre       | VARCHAR(50)      | Nombre del usuario                  |s |
+| email        | VARCHAR(100)     | Correo electrónico (único)          | s|
+| contraseña   | VARCHAR(255)     | Hash de la contraseña               |w |
+| creado_en    | DATETIME         | Fecha de creación del registro      | s|
 
 
