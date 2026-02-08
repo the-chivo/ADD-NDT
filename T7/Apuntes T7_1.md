@@ -33,8 +33,11 @@ Usuario Manuel = new Usuario (2, Manuel
 
 
 
+|  |  |
 |--------------|--------------|
-| Clases <----- |-----> Tablas |
-| Objeotos <----- | -----> Filas |
-| Atributos <----- | -----> Columnas |
+| id <----- |-----> nombre |
+| 1 <----- | -----> Juan |
+| 2 <----- | -----> Manuel |
+
+
 
