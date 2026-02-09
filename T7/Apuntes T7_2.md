@@ -222,11 +222,74 @@ transaction.commit();
 
 - Confirma la operacion
 
+```
 @SpringBootApplication
 public class Practica78Application{
 
   public static void main(String[] args){
     ApplicationContext ctx = SpringApplication.run(Practica78Application.class, args);
-    Pelicula
+    Pelicula pelicula = new Pelicula("Piratas del caribe", "Gore Verbinski", 180);
+    peliculaService.insertarPelicula(pelicula);
   }
+```
+
+ Podemos llamar al método insertarPelicula se la siguiente forma
+ ```
+peliculaService.insertarPelicula(pelicula);
+
+# 4. Lectura, almacenamiento y modificación de objetos
+
+#### Métodos de la clase session
+
+| Almacenamiento  | Lectura |Borrado |Actualizacion|
+|--------------|------------------|-------------------------------------|---|
+| .persist(Entity entity)| .get(Class, Long id)  | .delete(Entity entity)|.merge(Entity entity)|
+
+## 5.CriteriaBuilder, CriteriaQuery & Root
+
+- Clase que permite construir consultas más complejas
+#### Creamos un criteriaBuilder
+
+```
+public List<Pelicula> obtenerPeliculasConDuracionMenorA(int minutos){
+
+  Session session = sessionFactory.oppenSession();
+  List<Pelicula> peliculas = null;
+
+  try{
+    CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+    CriteriaQuery<Pelicula> criteriaQuery = criteriaBuilder.createQuery(Pelicukla.class)
+    Root<Pelicula> root = criteriaQuery.from(Pelicula.class)
+    criteriaQuery.select(root).where(criteriaBuilder.lessThan(root.get("duration), minutos));
+    peliculas = session.createQuery(criteriaQuery).getResultList();
+  } catch(Exception e){
+    e.printStackTrace();
+  } finally{
+    session.close();
+  }
+
+  return peliculas;
 }
+
+
+```
+CriteriaQuery<Pelicula> criteriaQuery = criteriaBuilder.createQuery(pelicula.class);
+```
+- Clase que permite cosntruir consultas más complejas
+- indicamos que vamos a crear una query para la entidad "Pelicula"
+
+```
+Root<Pelicula> criteriaQuery.from(Pelicula.class);
+
+- Definimos la raiz de la consulta
+
+```
+ criteriaQuery.select(root).where(criteriaBuilder.lessThan(root.get("duration), minutos));
+```
+-Añadimos las condiciones a la consulta
+
+```
+peliculas = session.createQuery(criteriaQuery).getResultList();
+```
+
+- Ejecutar la consulta
