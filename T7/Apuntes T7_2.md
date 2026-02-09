@@ -171,14 +171,14 @@ public class PeliculaService {
   }
 }
 ```
-#### Un service es una clase que trabaja con una entidad
+- Un service es una clase que trabaja con una entidad
 
 ```
  @Autowired
   private SessionFactory sessionFactory;
 ```
 
-SessionFactory nos 
+- SessionFactory nos 
 permite obtener la 
 configuración de la base 
 de datos que hemos 
@@ -188,3 +188,45 @@ La anotación @Autowired
 permite obtener la 
 configuración de dicho 
 fichero
+```
+Session session = sessionFactory.openSession();
+```
+- Creación de la sesión
+```
+  Transaction transaction = null;
+
+    try{
+      transaction = session.beginTransaction();
+```
+- Indicamos que vamos a iniciar una operación
+
+```
+} catch (Exception e){
+      if (transaction != null){
+        transaction.rollback();
+      }
+```
+- Si cualquier operación falla entonces 
+revertimos la operación para evitar 
+fallos en la base de datos
+```
+
+```
+session.persist(pelicula)
+```
+
+- Guardamos en base de datos
+
+```
+transaction.commit();
+
+- Confirma la operacion
+
+@SpringBootApplication
+public class Practica78Application{
+
+  public static void main(String[] args){
+    ApplicationContext ctx = SpringApplication.run(Practica78Application.class, args);
+    Pelicula
+  }
+}
