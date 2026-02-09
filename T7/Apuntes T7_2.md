@@ -133,5 +133,58 @@ private int duracion;
 
 ## 4. Debemos definir los get() y los set()
 
-## 5. Si lanzamos la aplicaciòi veremos que se ha creado la tabla
+## 5. Si lanzamos la aplicaciòn veremos que se ha creado la tabla
 
+## 6. Insertar datos:
+
+### Objeto sesión
+- Sirve para establecer una conexión con la BD y realizar operaciones
+- No ceben mantenerse abiertos mucho tiempo por seguridad. Creación y destrucción cada vez que se utilicen
+- Permite insertar, borrar y leer datos
+
+```
+@Service
+public class PeliculaService {
+
+  @Autowired
+  private SessionFactory sessionFactory;
+
+  public PeliculasService(){}
+
+  public void insertarPelicula(Pelicula pelicula){
+
+    Session session = sessionFactory.openSession();
+    Transaction transaction = null;
+
+    try{
+      transaction = session.beginTransaction();
+      session.persist(pelicula);
+      transaction.commiit();
+    } catch (Exception e){
+      if (transaction != null){
+        transaction.rollback();
+      }
+      e.printStackTrace();
+    } finally{
+      session.close();
+    }
+  }
+}
+```
+#### Un service es una clase que trabaja con una entidad
+
+```
+ @Autowired
+  private SessionFactory sessionFactory;
+```
+
+SessionFactory nos 
+permite obtener la 
+configuración de la base 
+de datos que hemos 
+almacenado en 
+application.properties.
+La anotación @Autowired 
+permite obtener la 
+configuración de dicho 
+fichero
