@@ -236,7 +236,7 @@ public class Practica78Application{
  Podemos llamar al método insertarPelicula se la siguiente forma
  ```
 peliculaService.insertarPelicula(pelicula);
-
+```
 # 4. Lectura, almacenamiento y modificación de objetos
 
 #### Métodos de la clase session
