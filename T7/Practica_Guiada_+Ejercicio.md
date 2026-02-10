@@ -83,7 +83,7 @@ dos clases persistentes anteriores y haciendo uso de DBeaver muestre que las dos
 anteriores se han creado: 
 
 ![Imagen](Images/10.png)
-
+![Imagen](Images/11.png)
 ## Parte 2: Creación de las clases service.
 
 Como hemos visto en clase, una vez que tenemos las clases persistentes necesitamos crearnos 
