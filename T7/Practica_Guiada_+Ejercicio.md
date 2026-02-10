@@ -77,12 +77,12 @@ sesión de cine tendrá los atributos id, hora, id_película donde id_película 
 la película de la otra clase persistente. 
 
 ![Imagen](Images/8.png)
-
+![Imagen](Images/9.png)
 Una vez creadas las clases persistentes, lance el programa a continuación para que se creen las 
 dos clases persistentes anteriores y haciendo uso de DBeaver muestre que las dos tablas 
 anteriores se han creado: 
 
-![Imagen](Images/9.png)
+![Imagen](Images/10.png)
 
 ## Parte 2: Creación de las clases service.
 
