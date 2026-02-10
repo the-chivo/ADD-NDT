@@ -66,3 +66,39 @@ este paso cambiará si usa Ant o Gradle para su proyecto:
 ![Imagen](Images/7.png)
 
 # Ejercicio
+
+## Parte 1: Creación de las clases persistentes.
+
+Piense en dos conceptos que estén relacionados y represente dichos conceptos como clases 
+persistentes. Al ser dos conceptos relacionados un atributo de una clase hará referencia a otro 
+atributo de la otra clase, deberá investigar cómo implementar dicha relación.  
+Ejemplo conceptual de relación: Una película tendrá de atributos id, nombre, duración, etc… Una 
+sesión de cine tendrá los atributos id, hora, id_película donde id_película hace referencia al id de 
+la película de la otra clase persistente. 
+
+![Imagen](Images/8.png)
+
+Una vez creadas las clases persistentes, lance el programa a continuación para que se creen las 
+dos clases persistentes anteriores y haciendo uso de DBeaver muestre que las dos tablas 
+anteriores se han creado: 
+
+![Imagen](Images/9.png)
+
+## Parte 2: Creación de las clases service.
+
+Como hemos visto en clase, una vez que tenemos las clases persistentes necesitamos crearnos 
+clases “service” que son clases que nos permiten trabajar con clases persistentes, manipularlas 
+y realizar operaciones CRUD (insertar, leer, borrar, actualizar datos).  
+Deberá crear dos servicios, uno para cada clase persistente mostrada anteriormente donde se 
+puedan realizar las siguientes operaciones (un método para cada una de las siguientes 
+operaciones):  
+• Insertar (debe devolver el id del objeto insertado).  
+• Borrar dado un objeto (parámetro).  
+• Actualizar un objeto dado un id y un atributo.  
+(En mi ejemplo podría ser actualizar la hora de una sesión dado su id por parámetro así como la 
+nueva hora).  
+• Obtener un objeto dado un id (parámetro).  
+• Obtener uno o varios objetos dado un atributo diferente del id (parámetro).  
+(En mi ejemplo podríamos tener un método que obtenga las sesiones que empiecen a una 
+determinada hora).
+
