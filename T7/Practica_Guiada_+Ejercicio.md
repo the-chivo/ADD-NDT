@@ -43,13 +43,11 @@ en DBeaver.  En este punto ya podríamos realizar consultas sobre nuestra base
 
  ## Parte 3: Spring Boot (Framework Java) + Hibernate
 
- ![Imagen](Images/5.png)
-
  Como ya sabemos para inicializar un proyecto con Sprint Boot, nos dirigimos a la siguiente 
 página: https://start.spring.io/ y aplicamos en este caso la siguiente configuración, sustituyendo 
 los datos necesarios por los que esté utilizando en su proyecto: 
+ ![Imagen](Images/5.png)
 
- ![Imagen](Images/6.png)
 
 Puede observar que estamos instalando una dependencia diferente respecto a la práctica 
 anterior: un driver para nuestra base de datos PostgreSQL. Además ahora podemos observar que 
@@ -60,11 +58,11 @@ la dependencia Spring Data JPA incluye Hibernate.
 Rellene en el archivo application.properties con los siguientes campos, sustituyendo los datos 
 necesarios por los que esté utilizando en su proyecto:
 
-![Imagen](Images/7.png)
+![Imagen](Images/6.png)
 
 Para lanzar una aplicación Spring Boot deberá añadir la siguiente configuración, recuerde que 
 este paso cambiará si usa Ant o Gradle para su proyecto:
 
-![Imagen](Images/8.png)
+![Imagen](Images/7.png)
 
 # Ejercicio
