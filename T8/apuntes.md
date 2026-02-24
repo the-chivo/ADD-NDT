@@ -85,5 +85,36 @@ No se ha encontrado el recurso
 #### OK
 Todo ha ido bien
 
-Las peticiones HTTP que hacen peticiones a las APIs pueden enviar información para insertar algo en la BD, actualizar un dato, etc.
+## 5.Pasando la información a la API
+
+#### Las peticiones HTTP que hacen peticiones a las APIs pueden enviar información para insertar algo en la BD, actualizar un dato, etc.
 #### Podemos hacerlo de dos formas diferentes:
+
+#### En la URL
+Usaremos la anotación @PathVariable
+
+#### En el body de una petición HTTP
+Usaremos la anotación @RequestBody
+
+## 5.1.Pasando la informacion a la API a través de la URL
+
+#### Se utilizar este metodo cuando se envía uno o pocos datos simples de la API
+```
+public ResponseEntity<Void> actualizarPelicula(@PathVariable Long id, @RequestParam String nuevoTitulo)
+```
+
+## 5.2. Pasando información a la API a través del body de la petición
+
+#### Se utiliza este metodo cuando se envían datos complejos a la aplicación
+```
+public ResponseEntity<Long> insertarPelicula(@RequestBody Pelicula pelicula)
+```
+### 6.Anotación PathVariable
+#### Existen operaciones que trabajan con todos los datos como por ejemplo: "Obtener todos los datos de peliculas"
+#### Pero en otras ocasiones únicamente queremos trabajar con un solo dato como por ejemplo:
+#### -Borrar una película con id "X"
+#### -Obtener una película con id "X"
+#### -Actualizar una película con id "X"
+
+
+
