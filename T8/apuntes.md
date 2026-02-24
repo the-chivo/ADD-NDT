@@ -109,7 +109,7 @@ public ResponseEntity<Void> actualizarPelicula(@PathVariable Long id, @RequestPa
 ```
 public ResponseEntity<Long> insertarPelicula(@RequestBody Pelicula pelicula)
 ```
-### 6.Anotación PathVariable
+## 6.Anotación PathVariable
 
  Existen operaciones que trabajan con todos los datos como por ejemplo: "Obtener todos los datos de peliculas"
  Pero en otras ocasiones únicamente queremos trabajar con un solo dato como por ejemplo:
@@ -147,3 +147,15 @@ public ResponseEntity<List<Pelicula>> obtenerPeliculas() {
 }
 ```
 
+## 7.Operación post
+
+Para realizar una operacion POST (insertar un recurso en la BD) necesitamos:
+
+- Crear un método en el controlador
+- Encima del método colocar la anotación @PostMapping
+- En estos metodos es común que un parámetro sea de tipo @RequestBody
+- Utilizar el método del servicio que inserta un dato
+
+## 8.Operación DELETE
+
+Para 
