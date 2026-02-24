@@ -76,3 +76,14 @@ return new ResponseEntity<>(HttpStatus.NOT_Found);
 
 - El estado a devolver dependerá de la operación que se realice y lo que ocurra
 - El objeto HttpStatus contiene todos los estados posibles de HTML mediente diversos enumerados
+#### NO_CONTENT
+La respuesta no envia contenido
+#### CREATED
+Se ha creado un nuevo recurso en BD
+#### NOT_FOUND
+No se ha encontrado el recurso
+#### OK
+Todo ha ido bien
+
+Las peticiones HTTP que hacen peticiones a las APIs pueden enviar información para insertar algo en la BD, actualizar un dato, etc.
+#### Podemos hacerlo de dos formas diferentes:
