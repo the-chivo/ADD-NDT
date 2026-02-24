@@ -110,11 +110,40 @@ public ResponseEntity<Void> actualizarPelicula(@PathVariable Long id, @RequestPa
 public ResponseEntity<Long> insertarPelicula(@RequestBody Pelicula pelicula)
 ```
 ### 6.Anotación PathVariable
-#### Existen operaciones que trabajan con todos los datos como por ejemplo: "Obtener todos los datos de peliculas"
-#### Pero en otras ocasiones únicamente queremos trabajar con un solo dato como por ejemplo:
+
+ Existen operaciones que trabajan con todos los datos como por ejemplo: "Obtener todos los datos de peliculas"
+ Pero en otras ocasiones únicamente queremos trabajar con un solo dato como por ejemplo:
+ 
 #### -Borrar una película con id "X"
 #### -Obtener una película con id "X"
 #### -Actualizar una película con id "X"
 
+En estos casos que queremos trabajar con un solo recurso debemos indicar en la ruta un campo que identifique el recurso con el que queremos trabajar
+Se utilizar la anotacion @PathVariable
+```
+public ResponseEntity<Void> borrarPelicula(@PathVariable Long if)
+```
+```
+@GetMapping("/{id}")
+public ResponseEntity<Pelicula> obtenerPelicula(@PathVariable Long id){
+    Pelicula pelicula = peliculaService.obtenerPelicula(id);
+    if (pelicula != null){
+         return new ResponseEntity<>(pelicula, HttpStatus.OK);
+    }else{
+       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+}
+```
 
+```
+@GetMapping("/")
+public ResponseEntity<List<Pelicula>> obtenerPeliculas() {
+    List<Pelicula> peliculas = peliculasService.obtenerTodasLasPeliculas();
+    if (pelicula != null && !peliculas.isEmpty){
+         return new ResponseEntity<>(pelicula, HttpStatus.OK);
+    }else{
+       return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+}
+```
 
