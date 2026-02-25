@@ -158,4 +158,82 @@ Para realizar una operacion POST (insertar un recurso en la BD) necesitamos:
 
 ## 8.Operación DELETE
 
-Para 
+Para realizar una operación DELETE (borrar un recurso de la BD) necesitamos:
+
+- Crear un método del controlador
+- Encima del método colocar la anotación @DeleteMapping con un párametro que indique cual queremos borrar @DeleteMapping("/{id}")
+- En estos métodos es común que un parámetro sea de tipo @PathVariable
+- Utilizar el método del servicio que borra un dato
+
+## 8.1.Operación GET sin parametros
+
+Para realizar una operación GET sin parámetros (obtener varios recursos de la BD) necesitamos:
+- Crear un método en el controlador
+- Encima del método colocar la anotación @GetMapping
+- Utilizar el método del servicio que obtiene todos los datos
+
+## 9.Operación GET con parámetros
+
+Para realizar una operación GET con parámetros(obtener uno o varios filtrados de la BD) necesitamos:
+
+- Crear un método en el controlador
+- Encima del método colocar la anotación @GetMapping con un parametro que indique cual queremos obtener @GetMapping("/{id}")
+- En estos métodos es común que un parametro sea de tipo @PathVariable
+- Utilizar un metodo del servicio que obtiene un dato con un id
+
+Tambien podemos no solo obtener por id y utilizar nuestro metodo que obtiene datos como un atributo:
+
+- @GetMapping("/duracionMenorA/{minutos}")
+- En este caso nuestro parametro seria @PathVariable int minutos
+- Utilizar el metodo del servicio que obtiene un dato dado un atributo
+
+## 10.Operación PUT
+
+Para realizar una operación PUT (actualizar un recurso de la BD) necesitamos:
+ n metodo en el controlador
+- Encima del metodo colocar la anotación @PutMapping con un parametro que indique cual queremos actualizar @PutMapping("/{id}")
+- En estos métodos es comun que un parametro sea de tipo @PathVariable (id) y otro tipo de @RequestParam (atributo a actualizar)
+- Utilizar el metodo del servicio que actualiza un dato
+
+## 11.Postman
+
+Postman es una herramienta para desarrollar, probar y documentar APIs
+En nuestro caso lo vamos a utilizar para una vez creada la API poder probar sus métodos mandando peticiones HTTP y observar el resultado a través de las respuestas que nos ofrece
+
+La interfaz es muy sencilla. Para probar a hacer una peticion:
+##### History--------- New y seleccionar HTTP
+
+Si tenemos en la API una ruta para obtener (GET) un recurso dado un ID podriamos hacer la siguiente petición:
+### Peticion:
+
+GET:  http://localhost:8080/peliculas/2
+
+### Respuesta:
+En Body---Pretty
+
+```
+{
+"id": 2,
+"titulo": "Piratas del caribe 3",
+"director": "Gore Verbinski",
+"duracion": 190
+}
+
+En caso de que utilicemos @RequestParam debemos rellenar el parametro aqui:
+
+Params-----Query Params
+Key---- nuevoTitulo
+Value---- Piratas del caribe 3
+
+Y vemos que lo añade a la URL
+
+En caso de que utilicemos @RequestBody debemos rellenar la información aqui:
+
+Body----- raw[x]
+```
+{
+"titulo": "Piratas del caribe 3",
+"director": "Gore Verbinski",
+"duracion": 190
+}
+```
