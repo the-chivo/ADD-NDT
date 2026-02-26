@@ -7,7 +7,7 @@ clase persistente que no contiene la clave externa con el objetivo de construir 
 Cree una clase controlador, para ello incluya las anotaciones correspondientes vistas en 
 teoría. Deberá establecer ya la ruta base al recurso que ofrecerá este controlador y tener 
 como atributo el servicio correspondiente.
-![Imagen](images/1.png)
+![Imagen](images/c1.png)
 
 ## Parte 2.1 Creación de un método POST. (1 punto)
 
@@ -22,7 +22,7 @@ decir, no se añade nada más a la ruta).
 • Insertará un objeto en la base de datos. 
 • Devuelve el id del objeto insertado así como un código HTTP 201.
 
-![Imagen](images/2.png)
+![Imagen](images/c2.png)
 
 ## Parte 2.2 Prueba del método POST. (1 punto)
 A continuación deberá hacer uso de Postman para crear una petición HTTP que inserte 
