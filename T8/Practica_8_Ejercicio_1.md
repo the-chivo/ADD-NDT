@@ -7,3 +7,4 @@ clase persistente que no contiene la clave externa con el objetivo de construir 
 Cree una clase controlador, para ello incluya las anotaciones correspondientes vistas en 
 teoría. Deberá establecer ya la ruta base al recurso que ofrecerá este controlador y tener 
 como atributo el servicio correspondiente.
+![Imagen](Images/1.png)
