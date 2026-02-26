@@ -49,3 +49,25 @@ nuevo valor de atributo (dependerá del método del servicio).
 • Devuelve el código HTTP 200. 
 
 ![Imagen](images/c5.png)
+
+## Parte 3.2 Prueba del método PUT. (1 punto)
+A continuación deberá hacer uso de Postman para crear una petición HTTP que actualice 
+un objeto de la base de datos. 
+
+![Imagen](images/c6.png)
+![Imagen](images/c7.png)
+![Imagen](images/c8.png)
+
+## Parte 4.1 Creación de un método GET por ID. (1 punto)
+Dentro de la clase controlador vamos a crear un método de la API que nos permitirá 
+obtener datos en la base de datos a través de peticiones HTTP. Para ello deberá crear un 
+método que cumpla con lo siguiente: 
+• Es un método de tipo GET. 
+• La ruta a la que se hace petición de inserción es /nombreRecurso/id donde 
+nombreRecurso es el nombre del recurso elegido en la cabecera del controlador e id 
+en un parámetro de la URL que indica el id del elemento que vamos a obtener. 
+• Recibe por parámetro el id del elemento que se va a obtener (@PathVariable). 
+• Obtendrá un objeto en la base de datos identificado por dicho ID. 
+• Devuelve: 
+• Si existe un elemento con dicho ID: El objeto y el código HTTP 200. 
+• Si no existe: El código HTTP 404.
