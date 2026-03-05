@@ -25,3 +25,4 @@ En el nombre del clúster escribimos AccesoADatos y a continuación podemos eleg
 entre varios proveedores, dejamos AWS y en región podémoste dejar la que encontramos 
 por defecto. 
 
+![Imagen](Images/1.PNG)
