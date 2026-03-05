@@ -103,3 +103,15 @@ public class MongoClientConnectionExample {
 }
 ```
 ![Imagen](Images/3.PNG)
+
+## Parte 5. Creación de una BD y colección en MongoDB Atlas.
+
+Nos dirigimos a la opción “Browse collections” de nuestro clúster, en esta sección 
+podemos administrar las bases de datos. Eliminamos la base de datos que incluye por 
+defecto y creamos una con el nombre AccesoADatosDB, para ello deberá hacer click en 
+“Add my own data”. En el nombre de colección ponemos AccesoADatosCollection, una 
+colección es el equivalente a una tabla, por ahora creamos una por defecto para poder 
+continuar pero más adelante crearemos otras más realistas para la realización de la 
+práctica.
+
+![Imagen](Images/4.PNG)
