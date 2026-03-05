@@ -26,3 +26,80 @@ entre varios proveedores, dejamos AWS y en región podémoste dejar la que encon
 por defecto. 
 
 ![Imagen](Images/1.PNG)
+
+Tras esto debemos pulsar en el botón “Create Deployment” que nos creará nuestro 
+clúster para poder alojar una base de datos de tipo MongoDB en la nube. 
+
+## Parte 3: Guardar los datos de usuario administrador 
+
+A continuación aparecerá una pestaña emergente donde nos indica que se ha creado un 
+usuario y una contraseña con permisos de administrador en las futuras bases de datos 
+que vayamos a crear en nuestro clúster. 
+Incluya una captura de pantalla del usuario y la contraseña para evitar perder estos datos 
+en un futuro. 
+
+![Imagen](Images/2.PNG)
+
+#### User:
+titomonguer_db_user
+#### Password:
+pIINxsbJGqxb0jPR
+
+ Tras esto hacemos click en crear usuario y pasamos al siguiente paso haciendo click en 
+“Choose a connection method”. 
+
+## Parte 4. Obtención de datos de conexión a MongoDB Atlas.
+
+En este paso, como nos vamos a conectar a una base de datos en la nube, necesitamos 
+obtener una serie de datos para establecer esta conexión desde nuestra aplicación Java. 
+Elegimos la opción “Drivers” ya que como hasta ahora, nos vamos a conectar a la base 
+de datos haciendo uso de un conector Java.  
+Tras esto debemos dejar por defecto los datos del driver de Java y debemos copiar y 
+guardarnos el string de conexión. IMPORTANTE NO PERDERLO. Esta cadena de 
+texto nos permitirá establecer la conexión con nuestro clúster y base de datos. 
+
+#### Cadena de texto:
+```
+mongodb+srv://titomonguer_db_user:<db_password>@accesoadatos.o5axkao.mongodb.net/?appName=AccesoADatos
+```
+#### Ejemplo codigo:
+```
+
+import com.mongodb.ConnectionString;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.MongoException;
+import com.mongodb.ServerApi;
+import com.mongodb.ServerApiVersion;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+
+public class MongoClientConnectionExample {
+    public static void main(String[] args) {
+        String connectionString = "mongodb+srv://titomonguer_db_user:<db_password>@accesoadatos.o5axkao.mongodb.net/?appName=AccesoADatos";
+
+        ServerApi serverApi = ServerApi.builder()
+                .version(ServerApiVersion.V1)
+                .build();
+
+        MongoClientSettings settings = MongoClientSettings.builder()
+                .applyConnectionString(new ConnectionString(connectionString))
+                .serverApi(serverApi)
+                .build();
+
+        // Create a new client and connect to the server
+        try (MongoClient mongoClient = MongoClients.create(settings)) {
+            try {
+                // Send a ping to confirm a successful connection
+                MongoDatabase database = mongoClient.getDatabase("admin");
+                database.runCommand(new Document("ping", 1));
+                System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
+            } catch (MongoException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+```
+![Imagen](Images/3.PNG)
