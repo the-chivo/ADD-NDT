@@ -115,3 +115,10 @@ continuar pero más adelante crearemos otras más realistas para la realización
 práctica.
 
 ![Imagen](Images/4.PNG)
+
+## Parte 6. Creación de un proyecto en SpringBoot
+
+Como siempre, nos dirigimos a https://start.spring.io/ y cambiamos los metadatos del 
+proyecto a practica12_13_14 menos el package name que lo dejamos con lo que se 
+genere. En la sección de dependencias añadimos “Spring Web” y “Spring Data 
+MongoDB”. Y en tipo de proyecto elegimos “Maven”. 
