@@ -122,3 +122,16 @@ Como siempre, nos dirigimos a https://start.spring.io/ y cambiamos los metadatos
 proyecto a practica12_13_14 menos el package name que lo dejamos con lo que se 
 genere. En la sección de dependencias añadimos “Spring Web” y “Spring Data 
 MongoDB”. Y en tipo de proyecto elegimos “Maven”. 
+
+![Imagen](Images/4.PNG)
+
+Tras esto, genere el proyecto e inclúyalo en Eclipse. 
+
+## Parte 7. Conectar la aplicación con MongoDB Atlas 
+
+En el archivo “application.properties” añadimos una nueva propiedad 
+“spring.data.mongodb.uri=“ y pegamos sin espacios la cadena de conexión que 
+obtuvimos en el paso 4. 
+Pruebe a iniciar la aplicación. Si falla revise que la cadena de conexión esté actualizada 
+siguiendo este formato: 
+
