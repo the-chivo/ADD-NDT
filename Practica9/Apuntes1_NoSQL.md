@@ -17,6 +17,5 @@
 ## 1.1 Clúster concepto
 
 Grupo de servidores que trabajan juntos para alojar y gestionar bases de datos en la nube de manera eficiente y escalable. Caracteristicas que deben cumplir:
-* #### Escalabilidad:
-Horizontalmente o verticalmente
+* #### Escalabilidad: Horizontalmente o verticalmente
 * #### Alta disponibilidad
