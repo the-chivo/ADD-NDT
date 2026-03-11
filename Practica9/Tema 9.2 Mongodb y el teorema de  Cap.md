@@ -74,5 +74,5 @@ Son alojadas y gestionadas por otras empresas que ofrecen este servicio.
 * La base de datos se crea y gestiona en el sitio del proveedor de servicios
 * El proveedor de servicios otorga un "string de conexion" para conectar las aplicaciones con esta base de datos.
 * En nuestra aplicacion unicamente tenemos que indicar que vamos a conectarnos a una base de datos den la nube e indicamos el string de conexion. Es una cadena que identifica nuestra base de datosy nos identifica como usuarios de la base de datos(auntenticacion)
-* 
+  
 
