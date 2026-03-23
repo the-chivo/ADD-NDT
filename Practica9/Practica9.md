@@ -151,7 +151,7 @@ Debe crear este documento llamado “Transaction” que debe tener como campos.
 *   description: string. (Descripción del ingreso o gasto).
 *    quantity: double. (Cantidad gastada).
 *    income: boolean (true si es un ingreso, false si es un gasto).
-*     date: Date. (Fecha en la que se hizo el gasto u obtuvo el ingreso)
+*    date: Date. (Fecha en la que se hizo el gasto u obtuvo el ingreso)
  Debe crear adicionalmente un constructor con parámetros para inicializar dichos campos 
 así como todos los getters y setters.
 ![Imagen](Images/c3.png)
