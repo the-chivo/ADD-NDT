@@ -134,4 +134,4 @@ En el archivo “application.properties” añadimos una nueva propiedad
 obtuvimos en el paso 4. 
 Pruebe a iniciar la aplicación. Si falla revise que la cadena de conexión esté actualizada 
 siguiendo este formato: 
-
+![Imagen](Images/c1.PNG)
