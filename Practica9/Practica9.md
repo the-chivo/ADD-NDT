@@ -135,3 +135,23 @@ obtuvimos en el paso 4.
 Pruebe a iniciar la aplicación. Si falla revise que la cadena de conexión esté actualizada 
 siguiendo este formato: 
 ![Imagen](Images/c2.png)
+## Parte 8. Creación de un modelo de datos
+
+Aunque los datos de las bases de datos no relacionales (llamados documentos) son 
+f
+lexibles y no necesariamente deben adaptarse a un modelo de datos concreto, 
+crearemos un modelo de datos para facilitar el uso de dichos datos de forma 
+estandarizada en nuestra aplicación.  
+Para esta práctica vamos a crear el backend de una aplicación que nos permita llevar el 
+control de nuestros gastos e ingresos. Por ello, vamos a crear un documento llamado 
+“Transaction” que representará este concepto de gasto o ingreso. 
+Debe crear este documento llamado “Transaction” que debe tener como campos. 
+
+*  id: string clave primaria.
+*   description: string. (Descripción del ingreso o gasto).
+*    quantity: double. (Cantidad gastada).
+*    income: boolean (true si es un ingreso, false si es un gasto).
+*     date: Date. (Fecha en la que se hizo el gasto u obtuvo el ingreso)
+ Debe crear adicionalmente un constructor con parámetros para inicializar dichos campos 
+así como todos los getters y setters.
+![Imagen](Images/c3.png)
