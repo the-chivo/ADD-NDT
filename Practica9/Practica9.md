@@ -172,3 +172,4 @@ métodos en esta interfaz que permitan:
 * Obtener los gastos entre dos fechas. 
 * Obtener los gastos de una cantidad menor a una dada. 
 * Obtener los gastos de una cantidad mayor a una dada.
+![Imagen](Images/c4.png)
