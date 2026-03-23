@@ -155,3 +155,20 @@ Debe crear este documento llamado “Transaction” que debe tener como campos.
  Debe crear adicionalmente un constructor con parámetros para inicializar dichos campos 
 así como todos los getters y setters.
 ![Imagen](Images/c3.png)
+## Parte 9. Creación de un repositorio 
+A continuación debemos crear un repositorio (MongoRepository) que es una interfaz que 
+proporciona un conjunto de operaciones CRUD (crear, leer, actualizar, eliminar) para 
+interactuar con nuestra base de datos de tipo MongoDB. Recuerde que, como hemos 
+visto en teoría, esta interfaz proporciona por defecto una serie de métodos que podemos 
+utilizar para manipular los datos de la base de datos.  
+No obstante vamos a crear algunos métodos personalizados útiles para nuestra 
+aplicación (Importante utilizar la convención de nombres vista en teoría). Deberá añadir 
+métodos en esta interfaz que permitan: 
+* Obtener los gastos. 
+* Obtener los ingresos. 
+* Obtener todas las transacciones del último mes. 
+* Obtener las transacciones con un valor superior a un valor. 
+* Obtener las transacciones con un valor entre dos valores dados. 
+* Obtener los gastos entre dos fechas. 
+* Obtener los gastos de una cantidad menor a una dada. 
+* Obtener los gastos de una cantidad mayor a una dada.
